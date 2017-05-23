@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    <LinearLayout 
+        android:id="@+id/lay_missionGw"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/title_layout_height"
+        android:background="@color/bg_title" >
+
+        <RelativeLayout
+            android:id="@+id/rel_backGw"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" >
+
+            <ImageView
+                android:id="@+id/iv_mission_backGw"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:paddingLeft="5dp"
+                android:paddingRight="10dp"
+                android:src="@drawable/left_arrow"/>
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tv_mission_titleGw"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:maxEms="15"
+            android:singleLine="true"
+            android:textColor="@color/white"
+            android:text="@string/txt_mission_tab"
+            android:textSize="18sp" />
+
+        <RelativeLayout
+            android:id="@+id/rel_mission_freshGw"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:paddingLeft="15dp"
+            android:paddingRight="10dp" >
+
+            <ImageView
+                android:id="@+id/iv_mission_freshGw"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_centerVertical="true"
+                android:src="@drawable/reload" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/lay_mission_topGw"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:orientation="horizontal" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1.5" >
+
+            <ImageView
+                android:id="@+id/iv_mission_menuGw"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="15dp"
+                android:src="@drawable/icon_liebiao" />
+        </RelativeLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/tv_mission_statisticsGw"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="今日任务统计"
+                android:textSize="18sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="上次刷时间:"
+                android:textSize="8sp" />
+
+            <TextView
+                android:id="@+id/tv_fresh_timeGw"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="2015:11:11 09:11"
+                android:textSize="8sp" />
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="50dp"
+            android:layout_weight="1.5" >
+
+            <ImageView
+                android:id="@+id/iv_renwu_menuGw"
+                android:layout_width="wrap_content"
+                android:layout_height="23dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp"
+                android:src="@drawable/icon_renwu_menu" />
+    	<View
+        android:id="@+id/view_renwu_menuGw"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/iv_renwu_menuGw"
+        android:visibility="invisible"
+        android:background="@color/view_line" />
+        </RelativeLayout>
+ 
+    </LinearLayout>
+
+    <View
+        android:id="@+id/view_mission_lineGw"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:background="@color/view_line" />
+
+   <!-- 
+    <com.handmark.pulltorefresh.library.PullToRefreshListView
+        xmlns:ptr="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/lv_saleclue_Gw"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:focusableInTouchMode="true"
+        android:gravity="center_horizontal"
+        android:listSelector="@android:color/transparent"
+        android:stretchMode="columnWidth"
+        android:divider="#00000000"  
+        android:dividerHeight="0dip"  />
+        
+         -->
+       <include 
+      layout="@layout/item_mission_gw"
+      />  
+   </LinearLayout>      
+  
+   <!--  
+            <WebView 
+        android:id="@+id/webview_missionGw"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+         -->
+       
+         
+</LinearLayout>

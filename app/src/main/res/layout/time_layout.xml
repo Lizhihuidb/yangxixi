@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/layout_bg"
+    android:orientation="vertical" >
+
+    <RadioGroup
+        android:id="@+id/rdgroup_fk"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:orientation="vertical" >
+
+<!--  
+            <RadioButton
+                android:id="@+id/btn_0"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:checked="true"
+                android:text=" 取得联系"
+                android:button="@drawable/radiobutton"
+                android:textSize="15.0sp" />
+
+            <RadioButton
+                android:id="@+id/btn_1"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text=" 有意向"
+                android:button="@drawable/radiobutton"
+                android:textSize="15.0sp" />
+
+            <RadioButton
+                android:id="@+id/btn_2"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text=" 邀约成功"
+                android:button="@drawable/radiobutton"
+                android:textSize="15.0sp" />
+-->
+            <RadioButton
+                android:id="@+id/btn_3"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/remark"
+                android:button="@drawable/radiobutton"
+                android:textSize="15.0sp" />
+    </RadioGroup>
+
+    <EditText
+        android:id="@+id/editContent"
+        android:layout_width="match_parent"
+        android:layout_height="110dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        android:layout_marginTop="10dp"
+        android:gravity="top"
+        android:hint="请在此输入其它计划内容"
+        android:maxLength="200"
+        android:textSize="18sp" />
+
+    <LinearLayout
+        android:id="@+id/timePicker1"
+        android:layout_width="400dip"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:paddingLeft="12dp"
+        android:paddingRight="12dp"
+        android:paddingTop="10dp" >
+
+        <com.tjl.yangxixi.wheelview.WheelView
+            android:id="@+id/year"
+            android:layout_width="85dip"
+            android:layout_height="wrap_content" />
+
+        <com.tjl.yangxixi.wheelview.WheelView
+            android:id="@+id/month"
+            android:layout_width="55dip"
+            android:layout_height="wrap_content" />
+
+        <com.tjl.yangxixi.wheelview.WheelView
+            android:id="@+id/day"
+            android:layout_width="55dip"
+            android:layout_height="wrap_content" />
+
+        <com.tjl.yangxixi.wheelview.WheelView
+            android:id="@+id/hour"
+            android:layout_width="40dip"
+            android:layout_height="wrap_content" />
+
+        <com.tjl.yangxixi.wheelview.WheelView
+            android:id="@+id/mins"
+            android:layout_width="40dip"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:paddingBottom="10dp" >
+
+        <Button
+            android:id="@+id/btn_datetime_sure"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/fan_button"
+            android:paddingBottom="8dp"
+            android:paddingLeft="30dp"
+            android:paddingRight="30dp"
+            android:paddingTop="8dp"
+            android:text="确定"
+            android:textColor="@color/white" >
+        </Button>
+
+        <Button
+            android:id="@+id/btn_datetime_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/fan_button"
+            android:paddingBottom="8dp"
+            android:paddingLeft="30dp"
+            android:paddingRight="30dp"
+            android:paddingTop="8dp"
+            android:text="取消"
+            android:textColor="@color/white" >
+        </Button>
+    </LinearLayout>
+
+</LinearLayout>

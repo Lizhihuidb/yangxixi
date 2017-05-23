@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.tjl.yangxixi">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.MANAGE_ACCOUNTS" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.READ_LOGS" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.PROCESS_OUTGOING_CALLS" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.READ_CALL_LOG" />
+    <!-- 往sdcard中写入数据的权限 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"></uses-permission>
+    <!-- 在sdcard中创建/删除文件的权限 -->
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"></uses-permission>
+
+    <!-- 百度地图所需权限 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+
+    <!--
+    必选
+<uses-permission android:name="android.permission.INTERNET" />
+<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+<uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+<uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+<uses-permission android:name="android.permission.READ_PHONE_STATE" />
+<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+<uses-permission android:name="android.permission.WAKE_LOCK" />
+<uses-permission android:name="android.permission.VIBRATE" />
+<uses-permission android:name="android.permission.WRITE_SETTINGS" />
+<uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
+【必选】用以设置前台是否显示通知
+<uses-permission android:name="android.permission.GET_TASKS" />
+    -->
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/logo522"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".activity.LoggingActivity"
+            android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".BaseActivity" />
+        <activity android:name=".activity.MainActivity" />
+        <activity android:name=".activity.ForgetPwdActivity" />
+        <activity android:name=".activity.DetailsClueActivity" />
+        <activity android:name=".activity.MissionGwActivity" />
+        <activity android:name=".activity.FollowUpActiivity" />
+        <activity android:name=".activity.TaskDistActivity" />
+        <activity android:name=".activity.DefeatActivity" />
+        <activity android:name=".activity.PlanArrangeActivity" />
+        <activity android:name=".activity.SingleActivity" />
+        <activity android:name=".activity.AboutUsActivity" />
+        <activity android:name=".activity.ProtocolActivity" />
+        <activity android:name=".activity.UserInfoActivity" />
+        <activity android:name=".activity.UserInfoSettingActivity" />
+        <activity android:name=".activity.ApplyGoOutGwActivity" />
+        <activity android:name=".activity.FieldPersonnelActivity" />
+        <activity android:name=".activity.FieldPersonnelGwActivity" />
+        <activity android:name=".activity.SignInApplyActivity" />
+        <activity android:name=".activity.SignInMapActivity" />
+        <activity android:name=".activity.FieldPersonnelSignActivity" />
+        <activity android:name=".activity.SignInInfoActivity" />
+        <activity android:name=".activity.LibraryMissionActivity" />
+
+        <service android:name=".service.UpdateAppService" />
+        <!-- 下载apk的service -->
+        <receiver android:name=".receiver.PhoneReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.PHONE_STATE" />
+                <action android:name="android.intent.action.NEW_OUTGOING_CALL" />
+            </intent-filter>
+        </receiver>
+
+        <meta-data
+            android:name="com.baidu.lbsapi.API_KEY"
+            android:value="8X9wNE4E3srtC26d8nDlrLXl" />
+
+        <service
+            android:name="com.baidu.location.f"
+            android:enabled="true"
+            android:process=":remote"></service>
+
+        <!--
+        公司高德地图的key
+        <meta-data
+            android:name="com.amap.api.v2.apikey"
+            android:value="8a176f71d77faf21853a0399b958d2a8">
+		</meta-data>
+        -->
+        <!-- 家高德地图的key -->
+        <meta-data
+            android:name="com.amap.api.v2.apikey"
+            android:value="19172ff3ded9de08da234ed444fbc6de"></meta-data>
+
+        <service android:name="com.amap.api.location.APSService" />
+        <!--
+        消息推送
+
+        <meta-data
+    		android:name="UMENG_APPKEY"
+    		android:value="5667f75a67e58ebc720043bc" >
+		</meta-data>
+		<meta-data
+		    android:name="UMENG_MESSAGE_SECRET"
+		    android:value="a7275bfa8accb3d9d0b12b4f68306683" >
+		</meta-data>
+        监听通知点击或者忽略处理的广播
+        <receiver
+            android:name="com.umeng.message.NotificationProxyBroadcastReceiver"
+            android:exported="false" >
+        </receiver>
+
+        监听开机运行、网络连接变化、卸载的广播
+        <receiver
+            android:name="com.umeng.message.SystemReceiver"
+            android:process=":push" >
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_REMOVED" />
+
+                <data android:scheme="package" />
+            </intent-filter>
+        </receiver>
+
+        监听消息到达的广播
+        <receiver
+            android:name="com.umeng.message.MessageReceiver"
+            android:exported="false"
+            android:process=":push" >
+            <intent-filter>
+                <action android:name="org.agoo.android.intent.action.RECEIVE" />
+            </intent-filter>
+        </receiver>
+
+        监听注册的广播
+        【应用包名】字符串需要替换成本应用的应用包名
+        <receiver
+            android:name="com.umeng.message.RegistrationReceiver"
+            android:exported="false" >
+            <intent-filter>
+                <action android:name="com.tjl.da_market.intent.action.COMMAND" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.umeng.message.UmengMessageBootReceiver" >
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+
+        Umeng的长连服务，用来建立推送的长连接的
+        【应用包名】字符串需要替换成本应用的应用包名
+        <service
+            android:name="com.umeng.message.UmengService"
+            android:exported="true"
+            android:label="PushService"
+            android:process=":push" >
+            <intent-filter>
+                <action android:name="com.tjl.da_market.intent.action.START" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.tjl.da_market.intent.action.COCKROACH" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="org.agoo.android.intent.action.PING_V4" />
+
+                <category android:name="umeng" />
+            </intent-filter>
+        </service>
+
+        Umeng的消息接收服务
+        <service
+            android:name="com.umeng.message.UmengIntentService"
+            android:process=":push" />
+
+        Umeng的消息路由服务
+        <service
+            android:name="com.umeng.message.UmengMessageIntentReceiverService"
+            android:exported="true"
+            android:process=":push" >
+            <intent-filter>
+                <action android:name="org.android.agoo.client.MessageReceiverService" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="org.android.agoo.client.ElectionReceiverService" />
+            </intent-filter>
+        </service>
+        -->
+        <activity
+            android:name=".activity.SingeDetailsActivity"
+            android:label="@string/title_activity_singe_details"></activity>
+        <activity
+            android:name=".activity.PersonageMessageActivity"
+            android:label="@string/title_activity_personage_message"></activity>
+        <activity
+            android:name=".activity.UpdatePwdActivity"
+            android:label="@string/title_activity_update_pwd"></activity>
+        <activity
+            android:name=".activity.ProceduresActivity"
+            android:label="@string/title_activity_procedures"></activity>
+        <activity
+            android:name=".activity.CustomerloginActivity"
+            android:label="@string/title_activity_customerlogin"></activity>
+        <activity
+            android:name=".activity.GrabsingleActivity"
+            android:label="@string/title_activity_grabsingle"></activity>
+        <activity
+            android:name=".activity.TaskActivity"
+            android:label="@string/title_activity_task"></activity>
+        <activity
+            android:name=".activity.ReportActivity"
+            android:label="@string/title_activity_report"></activity>
+        <activity
+            android:name=".activity.MyActivity"
+            android:label="@string/title_activity_my"></activity>
+        <activity
+            android:name=".activity.PersonageMyMessageActivity"
+            android:label="@string/title_activity_personage_my_message"></activity>
+        <activity
+            android:name=".activity.ResetPwdActivity"
+            android:label="@string/title_activity_reset_pwd"></activity>
+        <activity
+            android:name=".activity.OrderQueryActivity"
+            android:label="@string/title_activity_order_query"></activity>
+        <activity
+            android:name=".activity.OrderListActivity"
+            android:label="@string/title_activity_order_list"></activity>
+        <activity
+            android:name=".activity.SignActivity"
+            android:label="@string/title_activity_field_sign"></activity>
+        <activity android:name=".activity.LoginActivity"></activity>
+    </application>
+
+</manifest>

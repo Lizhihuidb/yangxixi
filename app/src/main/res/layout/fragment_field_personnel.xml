@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    <include layout="@layout/title"/>
+    <RelativeLayout 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <LinearLayout 
+        android:id="@+id/lay_field_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_centerInParent="true"
+        android:padding="10dp">
+        
+     <TextView 
+         android:id="@+id/tv_field_time"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:textSize="18sp"
+         android:text="全部申请"/>
+         <TextView 
+         android:id="@+id/tv_field_down"
+         android:layout_width="wrap_content"
+         android:layout_height="12dp"
+         android:layout_gravity="center"
+         android:layout_marginLeft="10dp"
+         android:background="@drawable/bottom"/>
+	     
+    </LinearLayout>
+    <TextView
+         android:id="@+id/tv_queryAll"
+         android:layout_width="wrap_content"
+         android:layout_height="30dp"
+         android:paddingLeft="20dp"
+         android:layout_marginRight="10dp"
+         android:layout_centerVertical="true"
+         android:layout_alignParentRight="true"
+         android:gravity="center"
+         android:visibility="gone"
+         android:paddingRight="20dp"
+         android:background="@color/tab_wtg"
+         android:textColor="@color/white"
+         android:text="全部"/>
+    </RelativeLayout>
+          <com.tjl.yangxixi.view.SimpleViewPagerIndicator
+            android:id="@id/id_stickynavlayout_indicator"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="10dp" >
+        </com.tjl.yangxixi.view.SimpleViewPagerIndicator>
+
+        <android.support.v4.view.ViewPager
+            android:id="@id/id_stickynavlayout_viewpager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:focusable="false" />
+</LinearLayout>

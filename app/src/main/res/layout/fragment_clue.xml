@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    <LinearLayout 
+        android:id="@+id/lay_clue"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+    <include layout="@layout/title"/>
+	<LinearLayout
+        android:id="@+id/lay_followup_reporting"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="10dip"
+        android:layout_marginRight="10dip"
+        android:layout_marginTop="10dip"
+        android:padding="10dp"
+        android:background="@color/white"
+        android:orientation="horizontal" >
+		<TextView 
+		    android:layout_width="45dp"
+		    android:layout_height="45dp"
+		    android:layout_weight="0"
+		    android:background="@drawable/icon_jikediancanicon"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginLeft="20dp"
+            android:layout_gravity="center"
+            android:text="线索跟进报表" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:layout_gravity="center"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/icon_arraw" />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/lay_gw_reporting"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dip"
+        android:layout_marginRight="10dip"
+        android:layout_marginTop="10dip"
+        android:padding="10dp"
+        android:background="@color/white"
+        android:orientation="horizontal" >
+		<TextView 
+		    android:layout_width="45dp"
+		    android:layout_height="45dp"
+		    android:layout_weight="0"
+		    android:background="@drawable/icon_taocanxiaoshou"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginLeft="20dp"
+            android:layout_gravity="center"
+            android:text="销售顾问跟进报表" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:layout_gravity="center"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/icon_arraw" />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/lay_cause_defeat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dip"
+        android:layout_marginRight="10dip"
+        android:layout_marginTop="10dip"
+        android:padding="10dp"
+        android:background="@color/white"
+        android:orientation="horizontal" >
+		<TextView 
+		    android:layout_width="45dp"
+		    android:layout_height="45dp"
+		    android:layout_weight="0"
+		    android:background="@drawable/icon_zbyy"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginLeft="20dp"
+            android:layout_gravity="center"
+            android:text="战败原因分析" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:layout_gravity="center"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/icon_arraw" />
+    </LinearLayout>
+    </LinearLayout>
+    <WebView 
+        android:id="@+id/webview_clue"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+</LinearLayout>

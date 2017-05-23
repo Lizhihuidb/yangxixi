@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+ <LinearLayout
+        android:id="@+id/lay_my_mission"
+        android:layout_width="100dp"
+        android:layout_height="40dip"
+        android:gravity="center_vertical"
+        android:orientation="horizontal" 
+        android:background="@color/white">
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginLeft="5dp"
+            android:src="@drawable/icon_wdrw" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:paddingLeft="5dip"
+            android:textColor="#595d5f"
+            android:text="我的任务" />
+        
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dip"
+        android:background="#eeeeee" />
+    <LinearLayout
+        android:id="@+id/lay_mission_plan"
+        android:layout_width="100dp"
+        android:layout_height="40dip"
+        android:gravity="center_vertical"
+        android:orientation="horizontal" 
+        android:background="@color/white">
+
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginLeft="5dp"
+            android:src="@drawable/icon_jhcx" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:paddingLeft="5dip"
+            android:textColor="#595d5f"
+            android:text="计划查询" />
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dip"
+        android:background="#eeeeee" />
+</LinearLayout>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/hui"
+    android:orientation="vertical" >
+<RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/title_layout_height"
+        android:background="@color/bg_title" >
+
+        <RelativeLayout
+            android:id="@+id/rel_taskdist_back"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" >
+
+            <ImageView
+                android:id="@+id/iv_taskdist_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:paddingLeft="5dp"
+                android:paddingRight="10dp"
+                android:src="@drawable/left_arrow"/>
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tv_taskdist_title"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:maxEms="15"
+            android:singleLine="true"
+            android:textColor="@color/white"
+            android:text="任务列表"
+            android:textSize="18sp" />
+
+        <RelativeLayout
+            android:id="@+id/rel_taskdist_fresh"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:paddingLeft="15dp"
+            android:paddingRight="10dp" >
+
+
+                <TextView
+        android:id="@+id/tv_title_operation"
+        android:layout_width="wrap_content"
+        android:layout_height="25dp"
+		android:layout_centerVertical="true"
+        android:textSize="14sp"
+        android:background="@drawable/opeeration_button"
+        android:textColor="@color/white"
+        android:text="确定" />
+        </RelativeLayout>
+    </RelativeLayout>
+    <ListView 
+        android:id="@+id/lv_store"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:listSelector="@null"
+        android:divider="@color/line"
+        android:dividerHeight="0.7dp"
+        android:background="@color/white"></ListView>
+    
+</LinearLayout>

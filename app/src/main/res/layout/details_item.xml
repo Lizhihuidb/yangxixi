@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="bottom"
+    android:layout_gravity="bottom"
+    android:orientation="vertical"
+    >
+    
+  <LinearLayout
+        android:id="@+id/layout_details"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:padding="10dp" 
+        android:orientation="horizontal"
+        >
+
+    <!-- 
+        <TextView
+            android:id="@+id/tv_fenpei"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="8dp"
+            android:layout_weight="1"
+            android:background="@drawable/fan_button"
+            android:gravity="center"
+            android:text="分配"
+            android:textColor="@color/white"
+            android:textSize="14sp" />
+		 -->
+		 
+		 
+        <TextView
+            android:id="@+id/tv_cheng"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/cheng_button"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:text="成单"
+            android:textColor="@color/white"
+            android:textSize="14sp" />
+<!-- 
+        <TextView
+            android:id="@+id/tv_bai"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_weight="1"
+            android:background="@drawable/dui_button"
+            android:gravity="center"
+            android:text="战败"
+            android:textColor="@color/white"
+            android:textSize="14sp" />
+
+ -->
+ 		<TextView
+            android:id="@+id/tv_qiandao"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/sing_button"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:text="签到"
+            android:textColor="@color/white"
+            android:textSize="14sp" 
+            android:layout_marginLeft="10dp"
+            />
+ 
+        <TextView
+            android:id="@+id/tv_fan"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/fan_button"
+            android:gravity="center"
+            android:text="@string/subscribe"
+            android:textColor="@color/white"
+            android:layout_weight="1"
+            android:textSize="14sp"
+            android:layout_marginLeft="10dp"
+             />
+    </LinearLayout>
+    
+</LinearLayout>

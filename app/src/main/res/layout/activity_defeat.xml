@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    <RelativeLayout 
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/title_layout_height"
+        android:background="@color/bg_title">
+	    <RelativeLayout
+		    android:id="@+id/rel_defeat_back"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content">
+	    <ImageView
+	        android:id="@+id/iv_defeat_back"
+	        android:layout_width="wrap_content"
+	        android:layout_height="match_parent"
+	        android:layout_alignParentLeft="true"
+	        android:layout_centerVertical="true"
+	        android:paddingLeft="5dp"
+	        android:paddingRight="10dp"
+	        android:src="@drawable/left_arrow"/>
+	    </RelativeLayout>
+	
+	    <TextView
+	        android:id="@+id/tv_defeat_title"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_centerInParent="true"
+	        android:gravity="center"
+	        android:maxEms="15"  
+			android:singleLine="true"  
+			android:ellipsize="end" 
+	        android:textColor="@color/white"
+	        android:text="战败"
+	        android:textSize="18sp" />
+
+    </RelativeLayout>
+    <WebView 
+        android:id="@+id/webview_defeat"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+</LinearLayout>

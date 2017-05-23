@@ -1,0 +1,34 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <EditText
+        android:id="@+id/et_oldPwd"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/setpwd_password_old" />
+
+    <EditText
+        android:id="@+id/et_newPwd"
+        android:layout_width="fill_parent"
+        android:hint="@string/setpwd_password_newpwd"
+        android:layout_height="wrap_content" />
+    
+     <EditText
+        android:id="@+id/et_newPwd_ok"
+        android:layout_width="fill_parent"
+        android:hint="@string/setpwd_password_newpwd_ok"
+        android:layout_height="wrap_content" />
+
+   
+        
+      <Button android:id="@+id/btn_ok"
+          android:layout_width="fill_parent"
+          android:layout_height="wrap_content"
+          android:text="@string/common_ok"
+          android:textColor="@color/black"/>
+    
+
+</LinearLayout>

@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/pp_bg_dialog"
+    android:orientation="vertical" >
+<LinearLayout 
+     android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="vertical"
+    >
+    <TextView
+        android:id="@+id/tvVersionUpgrade"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dip"
+        android:text="请升级到新版"
+        android:layout_weight="0"
+        android:textAppearance="?android:attr/textAppearanceMediumInverse"
+        android:textColor="@color/black" />
+
+    <View
+        android:id="@+id/viewLine"
+        style="@style/line"
+        android:layout_weight="0"
+        android:background="@color/text_gray" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0"
+        android:layout_marginLeft="15dip"
+        android:layout_marginTop="20dip"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="升级版本："
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/tvVersionNumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="2.2.3"
+            android:textColor="@color/black" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0"
+        android:layout_marginLeft="15dip"
+        android:orientation="horizontal"
+        android:textColor="@color/black" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="更新时间："
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/tvVersionTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2015.01.20"
+            android:textColor="@color/black" />
+    </LinearLayout>
+
+   <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="15dip"
+        android:layout_weight="1"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/txMsg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="1.新增root设置\n2.新增收藏及分享\n3.优化页面设置" />
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="15dip"
+        android:layout_marginLeft="15dip"
+        android:layout_marginRight="15dip"
+        android:layout_weight="0"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/btnVersionCancel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dip"
+            android:layout_weight="1.0"
+            android:background="@drawable/fan_button"
+            android:gravity="center"
+            android:text="取消"
+            android:textAppearance="?android:attr/textAppearanceMediumInverse"
+            android:textColor="@color/white" />
+        <TextView
+            android:id="@+id/btnVersionInstall"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dip"
+            android:layout_weight="1.0"
+            android:background="@drawable/fan_button"
+            android:gravity="center"
+            android:text="立即安装"
+            android:textAppearance="?android:attr/textAppearanceMediumInverse"
+            android:textColor="@color/white" />
+    </LinearLayout>
+</LinearLayout>
+    
+
+</RelativeLayout>

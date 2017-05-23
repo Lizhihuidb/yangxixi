@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="300dp"
+    android:layout_height="150dp"
+    android:layout_gravity="center"
+    android:background="@drawable/dialog_white"
+    android:orientation="vertical"
+    android:paddingTop="20dp" >
+
+    <TextView
+        android:id="@+id/tv_describe_err"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:textSize="@dimen/font_size2"
+        android:textStyle="bold"
+        android:layout_margin="10dp"
+        android:text="网络出现问题，提交通话记录失败，取消或退出会丢失本次通话记录数据，请重试或检查网络！" />
+
+ 
+    <TextView
+        style="@style/line"
+        android:layout_marginTop="30dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/tv_cancel_err"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_margin="10dp"
+            android:gravity="center"
+            android:text="@string/common_cancel"
+            android:textColor="@color/button_text_color"
+            android:textSize="16sp" />
+
+        <TextView
+            style="@style/line"
+            android:layout_width="1dp"
+            android:layout_height="match_parent" />
+
+        <TextView
+            android:id="@+id/tv_ok_err"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:layout_margin="10dp"
+            android:text="重试"
+            android:textColor="@color/button_text_color"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+</LinearLayout>
