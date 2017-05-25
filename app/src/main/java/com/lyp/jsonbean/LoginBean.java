@@ -1,4 +1,4 @@
-package com.tjl.yangxixi.bean;
+package com.lyp.jsonbean;
 
 import java.io.Serializable;
 import java.util.List;

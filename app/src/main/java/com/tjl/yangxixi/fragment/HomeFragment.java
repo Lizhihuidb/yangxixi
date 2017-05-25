@@ -11,7 +11,7 @@ import android.widget.LinearLayout;
 
 import com.tjl.yangxixi.OriginalFragment;
 import com.tjl.yangxixi.R;
-import com.tjl.yangxixi.bean.LoginBean;
+import com.lyp.jsonbean.LoginBean;
 import com.tjl.yangxixi.view.FragmentTabHost;
 
 /**

@@ -4,7 +4,7 @@ import android.os.Bundle;
 
 import com.tjl.yangxixi.BaseActivity;
 import com.tjl.yangxixi.R;
-import com.tjl.yangxixi.bean.LoginBean;
+import com.lyp.jsonbean.LoginBean;
 import com.tjl.yangxixi.fragment.GWHomeFragment;
 import com.tjl.yangxixi.fragment.HomeFragment;
 import com.tjl.yangxixi.fragment.JlMyFragment;

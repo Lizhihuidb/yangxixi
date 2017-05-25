@@ -3,7 +3,6 @@ package com.tjl.yangxixi.fragment;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -13,9 +12,7 @@ import com.lyp.percent.PercentRelativeLayout;
 import com.tjl.yangxixi.OriginalFragment;
 import com.tjl.yangxixi.R;
 import com.tjl.yangxixi.activity.SingeDetailsActivity;
-import com.tjl.yangxixi.bean.LoginBean;
 import com.tjl.yangxixi.bean.UserInfoBean;
-import com.tjl.yangxixi.view.FragmentTabHost;
 
 /**
  *

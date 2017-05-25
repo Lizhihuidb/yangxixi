@@ -4,7 +4,6 @@ package com.tjl.yangxixi.activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -18,7 +17,7 @@ import android.widget.Toast;
 
 import com.tjl.yangxixi.R;
 import com.tjl.yangxixi.api.YangxixiApi;
-import com.tjl.yangxixi.bean.LoginBean;
+import com.lyp.jsonbean.LoginBean;
 
 import java.io.IOException;
 import java.util.List;
@@ -46,11 +45,8 @@ public class LoggingActivity extends FragmentActivity implements OnClickListener
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_logging);
         initview();
-        Log.i("tag", "aaaaaaaaaaaaaaaaaaaa");
         start();
-
     }
-
 
     private void initview(){
         mLoginimg = (TextView) findViewById(R.id.start_loginimg);
@@ -62,9 +58,6 @@ public class LoggingActivity extends FragmentActivity implements OnClickListener
         mUserPwd.setOnClickListener(this);
         mLogin.setOnClickListener(this);
         mForgetPwd.setOnClickListener(this);
-
-
-
     }
 
     //启动图
@@ -85,7 +78,6 @@ public class LoggingActivity extends FragmentActivity implements OnClickListener
             }, 1000);
         }
     }
-
 
     @Override
     public void onClick(View arg0) {
@@ -108,8 +100,6 @@ public class LoggingActivity extends FragmentActivity implements OnClickListener
                 .baseUrl(YangxixiApi.APP_URL)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
-
-
         YangxixiApi github = retrofit.create(YangxixiApi.class);
         Call<LoginBean> call = github.getLogin(userName, userPwd);
         call.enqueue(new Callback<LoginBean>() {
@@ -118,9 +108,7 @@ public class LoggingActivity extends FragmentActivity implements OnClickListener
                 LoginBean bean = response.body();
                 if (bean.getResult() == 1) {
                     Toast.makeText(LoggingActivity.this,""+response.message(),Toast.LENGTH_SHORT).show();
-                    Log.i("tag", "成功"+bean.toString());
                     List<LoginBean.DataBean> dataBeen = bean.getData();
-                    Log.i("tag",dataBeen.get(0).toString());
 //                        if (dataBeen.get(0).getManager().equals("0")){
 //                            Log.i("tag","管理员");
 //                            setDefaultFragment(HomeFragment.newInstance(dataBeen.get(0)));
@@ -139,7 +127,6 @@ public class LoggingActivity extends FragmentActivity implements OnClickListener
                     Toast.makeText(LoggingActivity.this, ""+response.message(),Toast.LENGTH_SHORT).show();
                 }
             }
-
             @Override
             public void onFailure(Call<LoginBean> call, Throwable t) {
                 Log.i("tag","失败"+t.getMessage());
@@ -161,7 +148,6 @@ public class LoggingActivity extends FragmentActivity implements OnClickListener
         }
         return true;
     }
-
 
 //    //跳转到相对应的Fragment
 //    private void setDefaultFragment(Fragment fragment){

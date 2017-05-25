@@ -31,7 +31,6 @@ import com.tjl.yangxixi.R;
  */
 public class MissionManagerFragment extends OriginalFragment implements OnClickListener {
 
-
 	View v;
 	private List<Fragment> fragments;//fragment的集合
 	private AllMissionFragment mAllMissionFragment;//所有任务
@@ -47,20 +46,17 @@ public class MissionManagerFragment extends OriginalFragment implements OnClickL
 
 	@Override
 	protected void lazyLoad() {
-
 	}
 
 	public View createView(LayoutInflater inflater, ViewGroup container,
 						   Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		v= inflater.inflate(R.layout.fragment_mission_xsjl, null,true);
-
 		init();
 		viewPager.setCurrentItem(0);
 		fm = getFragmentManager();
 		return v;
 	}
-
 
 	private void init(){
 		fragments = new ArrayList<Fragment>();
@@ -136,19 +132,14 @@ public class MissionManagerFragment extends OriginalFragment implements OnClickL
 			@Override
 			public void onPageScrollStateChanged(int arg0) {
 				// TODO Auto-generated method stub
-
 			}
 
 			@Override
 			public void onPageScrolled(int arg0, float arg1, int arg2) {
 				// TODO Auto-generated method stub
-
 			}
 		});
-
 	}
-
-
 
 	@Override
 	public void onClick(View arg0) {
@@ -174,8 +165,11 @@ public class MissionManagerFragment extends OriginalFragment implements OnClickL
 				ft.replace(R.id.bbnbn, missionTaskFragment);
 				ft.addToBackStack(null);
 				ft.commit();
-				Toast.makeText(getActivity(), "我的任务", 0).show();
+				Toast.makeText(getActivity(), "我的任务", Toast.LENGTH_SHORT).show();
 				break;
 		}
 	}
+
+
+
 }
