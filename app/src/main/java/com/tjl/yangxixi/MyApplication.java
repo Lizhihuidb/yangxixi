@@ -3,6 +3,7 @@ package com.tjl.yangxixi;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.tjl.yangxixi.bean.LoginBean;
 import com.tjl.yangxixi.bean.UserInfoBean;
 
 import android.app.Application;
@@ -15,8 +16,8 @@ public class MyApplication extends Application{
 	private String userName;
 	
 	private List<UserInfoBean> userList;
-	
-	
+
+
 
 	@Override
 	public void onCreate() {
@@ -51,7 +52,5 @@ public class MyApplication extends Application{
 		this.userName = userName;
 	}
 
-	
-	
 
 }

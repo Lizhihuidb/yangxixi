@@ -1,5 +1,6 @@
 package com.tjl.yangxixi.bean;
 
+import java.io.Serializable;
 import java.util.List;
 
 /**
@@ -8,7 +9,7 @@ import java.util.List;
  * 登录
  */
 
-public class LoginBean {
+public class LoginBean implements Serializable{
 
 
     /**
@@ -59,13 +60,8 @@ public class LoginBean {
                 '}';
     }
 
-    public LoginBean(int result, String message, List<DataBean> data) {
-        this.result = result;
-        this.message = message;
-        this.data = data;
-    }
 
-    public static class DataBean {
+    public static class DataBean implements Serializable{
         /**
          * id : 5
          * c_id : 10

@@ -14,11 +14,11 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 /**
- * ����
- * 
+ * 基类
+ *
  * Activity
- * 
- * 
+ *
+ *
  */
 public abstract class BaseActivity extends FragmentActivity {
 	public Context context;
@@ -32,16 +32,16 @@ public abstract class BaseActivity extends FragmentActivity {
 		super.onCreate(savedInstanceState);
 		context = this;
 		/*
-		 * //��������������Ϣ���� PushAgent mPushAgent = PushAgent.getInstance(this);
-		 * mPushAgent.enable(); //ͳ��Ӧ����������
-		 * PushAgent.getInstance(context).onAppStart(); //��ȡdevice_token String
+		 * //开启友盟推送消息服务 PushAgent mPushAgent = PushAgent.getInstance(this);
+		 * mPushAgent.enable(); //统计应用启动数据
+		 * PushAgent.getInstance(context).onAppStart(); //获取device_token String
 		 * device_token = UmengRegistrar.getRegistrationId(this);
 		 * LogJY.d("ffff", device_token);
 		 */
 
-		// ��ʼ����ͼ
+		// 初始化视图
 		initView(savedInstanceState);
-		// ��ʼ������
+		// 初始化数据
 		initData();
 		initOnclik();
 	}
@@ -63,7 +63,7 @@ public abstract class BaseActivity extends FragmentActivity {
 	}
 
 	protected void setTitleView(final boolean isShowBack,
-			final boolean isFresh, final String titleText) {
+								final boolean isFresh, final String titleText) {
 		tvTitleText = (TextView) findViewById(R.id.tv_title_title);
 		tvTitleText.setText(titleText);
 		if (isShowBack) {
@@ -83,18 +83,18 @@ public abstract class BaseActivity extends FragmentActivity {
 
 	}
 
-	// ������ת
+	// 正常跳转
 	protected void openActivity(Class clazz) {
 		openActivity(clazz, null, -1);
 	}
 
-	// ������ת
+	// 正常跳转
 	protected void openActivityFinish(Class clazz) {
 		openActivity(clazz, null, -1);
 		finish();
 	}
 
-	// ��ֵ��ת
+	// 传值跳转
 	protected void openActivity(Class clazz, Bundle data) {
 		openActivity(clazz, data, -1);
 	}
@@ -102,12 +102,12 @@ public abstract class BaseActivity extends FragmentActivity {
 	protected void openActivity(Class clazz, Bundle data, int requestCode) {
 		Intent intent = new Intent(this, clazz);
 
-		// ������bundle�����ݾ�Ӧ��Ҫ����ȥ
+		// 如果你的bundle有数据就应该要带过去
 		if (data != null) {
 			intent.putExtras(data);
 		}
 
-		// ��ʲô��ʽ����
+		// 以什么方式开启
 		if (requestCode == -1) {
 			startActivity(intent);
 		} else {
@@ -115,12 +115,12 @@ public abstract class BaseActivity extends FragmentActivity {
 		}
 	}
 
-	// �õ�Editext�������ֵ
+	// 得到Editext中输入的值
 	public String getEditextvalue(EditText etName) {
 		return etName.getText().toString().trim();
 	}
 
-	// �ж��ַ����Ƿ�Ϊ��
+	// 判断字符串是否为空
 	public static boolean IsNotEmpty(String str) {
 		if (!TextUtils.isEmpty(str)) {
 			if (!"null".equals(str)) {
@@ -145,7 +145,7 @@ public abstract class BaseActivity extends FragmentActivity {
 	protected void exit() {
 		if (System.currentTimeMillis() - currentBackPressedTime > BACK_PRESSED_INTERVAL) {
 			currentBackPressedTime = System.currentTimeMillis();
-			showToast("�ٰ�һ�η��ؼ��˳�����");
+			showToast("再按一次返回键退出程序");
 		} else {
 			finish();
 		}

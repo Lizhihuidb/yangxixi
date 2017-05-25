@@ -15,6 +15,9 @@ import com.tjl.yangxixi.R;
 import com.tjl.yangxixi.activity.PersonageMessageActivity;
 import com.tjl.yangxixi.activity.ProceduresActivity;
 
+/**
+ *  销售员“我的”
+ */
 public class MyFragment extends OriginalFragment implements OnClickListener{
 
 

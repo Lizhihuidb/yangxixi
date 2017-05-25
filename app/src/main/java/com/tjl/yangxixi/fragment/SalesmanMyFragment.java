@@ -12,6 +12,7 @@ import android.widget.Toast;
 
 import com.tjl.yangxixi.OriginalFragment;
 import com.tjl.yangxixi.R;
+import com.tjl.yangxixi.activity.ClauseActivity;
 import com.tjl.yangxixi.activity.PersonageMessageActivity;
 import com.tjl.yangxixi.activity.PersonageMyMessageActivity;
 import com.tjl.yangxixi.activity.ProceduresActivity;
@@ -37,7 +38,7 @@ public class SalesmanMyFragment extends OriginalFragment implements OnClickListe
 	public View createView(LayoutInflater inflater, ViewGroup container,
 						   Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
-		v=inflater.inflate(R.layout.fragment_salesmanmy, null);
+		v=inflater.inflate(R.layout.salesman_activty, null);
 		init();
 		return v;
 	}
@@ -45,12 +46,12 @@ public class SalesmanMyFragment extends OriginalFragment implements OnClickListe
 
 
 	private void init(){
-		mMessage = (LinearLayout) v.findViewById(R.id.ll_jlmy_message);
-		mServiceManual = (RelativeLayout) v.findViewById(R.id.rl_jlmy_service_manual);
-		mUseClauses = (RelativeLayout) v.findViewById(R.id.rl_jlmy_use_clauses);
-		mFeedback = (RelativeLayout) v.findViewById(R.id.rl_jlmy_feedback);
-		mAbout = (RelativeLayout) v.findViewById(R.id.rl_jlmy_about);
-		mVersion = (RelativeLayout) v.findViewById(R.id.rl_jlmy_version);
+		mMessage = (LinearLayout) v.findViewById(R.id.ll_salemy_message);
+		mServiceManual = (RelativeLayout) v.findViewById(R.id.rl_salemy_service_manual);
+		mUseClauses = (RelativeLayout) v.findViewById(R.id.rl_salemy_use_clauses);
+		mFeedback = (RelativeLayout) v.findViewById(R.id.rl_salemy_feedback);
+		mAbout = (RelativeLayout) v.findViewById(R.id.rl_salemy_about);
+		mVersion = (RelativeLayout) v.findViewById(R.id.rl_salemy_version);
 		mMessage.setOnClickListener(this);
 		mServiceManual.setOnClickListener(this);
 		mUseClauses.setOnClickListener(this);
@@ -64,26 +65,28 @@ public class SalesmanMyFragment extends OriginalFragment implements OnClickListe
 		// TODO Auto-generated method stub
 		Intent intent;
 		switch (arg0.getId()) {
-			case R.id.ll_jlmy_message:
+			case R.id.ll_salemy_message:
 				Toast.makeText(getActivity(), "个人中心", 0).show();
 				intent = new Intent(getActivity(),PersonageMyMessageActivity.class);
 				startActivity(intent);
 				break;
-			case R.id.rl_jlmy_service_manual:
+			case R.id.rl_salemy_service_manual:
 				Toast.makeText(getActivity(), "使用手册", 0).show();
 				intent = new Intent(getActivity(),ProceduresActivity.class);
 				startActivity(intent);
 				break;
-			case R.id.rl_jlmy_use_clauses:
+			case R.id.rl_salemy_use_clauses:
 				Toast.makeText(getActivity(), "使用条款和隐私政策", 0).show();
+				intent = new Intent(getActivity(), ClauseActivity.class);
+				startActivity(intent);
 				break;
-			case R.id.rl_jlmy_feedback:
+			case R.id.rl_salemy_feedback:
 				Toast.makeText(getActivity(), "意见反馈", 0).show();
 				break;
-			case R.id.rl_jlmy_about:
+			case R.id.rl_salemy_about:
 				Toast.makeText(getActivity(), "关于我们", 0).show();
 				break;
-			case R.id.rl_jlmy_version:
+			case R.id.rl_salemy_version:
 				Toast.makeText(getActivity(), "当前版本", 0).show();
 				break;
 		}

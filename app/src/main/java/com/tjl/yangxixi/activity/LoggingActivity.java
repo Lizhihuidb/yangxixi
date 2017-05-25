@@ -1,15 +1,20 @@
 package com.tjl.yangxixi.activity;
 
 
-import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.tjl.yangxixi.R;
 import com.tjl.yangxixi.api.YangxixiApi;
@@ -24,8 +29,7 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class LoggingActivity extends Activity implements OnClickListener{
-
+public class LoggingActivity extends FragmentActivity implements OnClickListener{
     private TextView mLoginimg;
     private EditText mUserName;
     private EditText mUserPwd;
@@ -33,6 +37,8 @@ public class LoggingActivity extends Activity implements OnClickListener{
     private TextView mForgetPwd;
     private String userName;
     private String userPwd;
+    FragmentManager fm;
+    FragmentTransaction ft;
 
 
     @Override
@@ -87,11 +93,13 @@ public class LoggingActivity extends Activity implements OnClickListener{
         switch (arg0.getId()) {
             case R.id.btn_logins:
                 try {
-                    login();
+                    if (isNull()) {
+                        login();
+                    }
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
-              break;
+                break;
         }
     }
 
@@ -101,18 +109,35 @@ public class LoggingActivity extends Activity implements OnClickListener{
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
-        userName = mUserName.getText().toString();
- //       userPwd = Integer.parseInt(mUserPwd.getText().toString());
-        userPwd = mUserPwd.getText().toString();
+
         YangxixiApi github = retrofit.create(YangxixiApi.class);
         Call<LoginBean> call = github.getLogin(userName, userPwd);
         call.enqueue(new Callback<LoginBean>() {
             @Override
             public void onResponse(Call<LoginBean> call, Response<LoginBean> response) {
-//                    LoginBean bean = response.body();
-                    Log.i("tag", "成功"+response.body()+"");
-                   List<LoginBean.DataBean> data=response.body().getData();
-                 Log.i("tag", ""+data.size());
+                LoginBean bean = response.body();
+                if (bean.getResult() == 1) {
+                    Toast.makeText(LoggingActivity.this,""+response.message(),Toast.LENGTH_SHORT).show();
+                    Log.i("tag", "成功"+bean.toString());
+                    List<LoginBean.DataBean> dataBeen = bean.getData();
+                    Log.i("tag",dataBeen.get(0).toString());
+//                        if (dataBeen.get(0).getManager().equals("0")){
+//                            Log.i("tag","管理员");
+//                            setDefaultFragment(HomeFragment.newInstance(dataBeen.get(0)));
+//                        }
+//                        else if(dataBeen.get(0).getManager().equals("1")){
+//                            Log.i("tag","普通成员");
+//                            setDefaultFragment(GWHomeFragment.newInstance(dataBeen.get(0)));
+//                        }
+                    Intent intent = new Intent(LoggingActivity.this,MainActivity.class);
+                    Bundle args = new Bundle();
+                    args.putSerializable("dataBean", dataBeen.get(0));
+                    intent.putExtras(args);
+                    startActivity(intent);
+                }
+                else {
+                    Toast.makeText(LoggingActivity.this, ""+response.message(),Toast.LENGTH_SHORT).show();
+                }
             }
 
             @Override
@@ -120,6 +145,30 @@ public class LoggingActivity extends Activity implements OnClickListener{
                 Log.i("tag","失败"+t.getMessage());
             }
         });
-
     }
+
+    //判断用户名和密码是否为空
+    boolean isNull(){
+        userName = mUserName.getText().toString();
+        userPwd = mUserPwd.getText().toString();
+        //判断用户名是否为空
+        if (userName.isEmpty()){
+            Toast.makeText(LoggingActivity.this,"请输入用户名",Toast.LENGTH_SHORT).show();
+            return false;
+        } else if(userPwd.isEmpty()){ //判断密码是否为空
+            Toast.makeText(LoggingActivity.this,"请输入密码",Toast.LENGTH_SHORT).show();
+            return false;
+        }
+        return true;
+    }
+
+
+//    //跳转到相对应的Fragment
+//    private void setDefaultFragment(Fragment fragment){
+//        fm = getSupportFragmentManager();
+//        ft = fm.beginTransaction();
+//        ft.add(R.id.frame, fragment);
+//        //transaction.addToBackStack(null);
+//        ft.commit();
+//    }
 }

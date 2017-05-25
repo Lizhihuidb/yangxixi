@@ -45,6 +45,11 @@ public class MissionManagerFragment extends OriginalFragment implements OnClickL
 	private FragmentManager fm;
 	private FragmentTransaction ft;
 
+	@Override
+	protected void lazyLoad() {
+
+	}
+
 	public View createView(LayoutInflater inflater, ViewGroup container,
 						   Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
@@ -173,12 +178,4 @@ public class MissionManagerFragment extends OriginalFragment implements OnClickL
 				break;
 		}
 	}
-
-
-	@Override
-	protected void lazyLoad() {
-		// TODO Auto-generated method stub
-
-	}
-
 }

@@ -3,6 +3,7 @@ package com.tjl.yangxixi.fragment;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -12,6 +13,7 @@ import com.lyp.percent.PercentRelativeLayout;
 import com.tjl.yangxixi.OriginalFragment;
 import com.tjl.yangxixi.R;
 import com.tjl.yangxixi.activity.SingeDetailsActivity;
+import com.tjl.yangxixi.bean.LoginBean;
 import com.tjl.yangxixi.bean.UserInfoBean;
 import com.tjl.yangxixi.view.FragmentTabHost;
 
@@ -22,32 +24,24 @@ import com.tjl.yangxixi.view.FragmentTabHost;
  */
 public class SingeFragment extends OriginalFragment implements OnClickListener{
 
-	private FragmentTabHost host;
 	View v;
 	private UserInfoBean user;
 	private PercentRelativeLayout percent_a;
+	public SingeFragment() {
+		// TODO Auto-generated constructor stub
+	}
+
+	@Override
+	protected void lazyLoad() {
+
+	}
+
 	public View createView(LayoutInflater inflater,
 						   @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		v = inflater.inflate(R.layout.fragment_singe_item, null);
 		init();
 		return v;
-	}
-
-	public SingeFragment() {
-		// TODO Auto-generated constructor stub
-	}
-	public SingeFragment(FragmentTabHost host) {
-		// TODO Auto-generated constructor stub
-		this.host=host;
-
-	}
-
-
-	@Override
-	protected void lazyLoad() {
-		// TODO Auto-generated method stub
-
 	}
 
 	private void init(){
