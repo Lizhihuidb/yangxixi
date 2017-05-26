@@ -4,9 +4,40 @@
 	android:layout_width="match_parent"
 	android:layout_height="match_parent"
 	android:fitsSystemWindows="true"
-	android:background="#ffffff"
+	android:background="@color/bg"
+	android:orientation="vertical"
 	>
-	<!--下拉刷新控件-->
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:orientation="horizontal"
+		android:padding="10dp"
+		android:background="@color/bg_ly"
+		android:gravity="center"
+		>
+	<TextView
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="当前共"
+		android:textColor="@color/white"
+		android:textSize="18sp"
+		/>
+	<TextView
+		android:id="@+id/tv_counts"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="88"
+		android:textColor="@color/white"
+		android:textSize="18sp"
+		/>
+	<TextView
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="条订单"
+		android:textColor="@color/white"
+		android:textSize="18sp"
+		/>
+	</LinearLayout>
 		<android.support.v7.widget.RecyclerView
 			android:id="@+id/grid_recycler"
 			android:layout_width="match_parent"

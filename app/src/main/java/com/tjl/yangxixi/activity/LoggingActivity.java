@@ -1,12 +1,12 @@
 package com.tjl.yangxixi.activity;
 
 
+import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.app.FragmentActivity;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -18,6 +18,7 @@ import android.widget.Toast;
 import com.tjl.yangxixi.R;
 import com.tjl.yangxixi.api.YangxixiApi;
 import com.lyp.jsonbean.LoginBean;
+import com.tjl.yangxixi.manager.SharePreferenceManager;
 
 import java.io.IOException;
 import java.util.List;
@@ -36,16 +37,24 @@ public class LoggingActivity extends FragmentActivity implements OnClickListener
     private TextView mForgetPwd;
     private String userName;
     private String userPwd;
-    FragmentManager fm;
-    FragmentTransaction ft;
+    SharedPreferences sp;
+//    FragmentManager fm;
+//    FragmentTransaction ft;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_logging);
-        initview();
         start();
+        initview();
+//        sp = getSharedPreferences("login", Activity.MODE_PRIVATE);
+//        SharedPreferences.Editor editor = sp.edit();
+//        editor.putString("Name", userName);
+//        editor.commit();
+//        //同样，在读取SharedPreferences数据前要实例化出一个SharedPreferences对象
+//        // 使用getString方法获得value，注意第2个参数是value的默认值
+//        sp.getString("Name", userName);
     }
 
     private void initview(){
@@ -107,7 +116,6 @@ public class LoggingActivity extends FragmentActivity implements OnClickListener
             public void onResponse(Call<LoginBean> call, Response<LoginBean> response) {
                 LoginBean bean = response.body();
                 if (bean.getResult() == 1) {
-                    Toast.makeText(LoggingActivity.this,""+response.message(),Toast.LENGTH_SHORT).show();
                     List<LoginBean.DataBean> dataBeen = bean.getData();
 //                        if (dataBeen.get(0).getManager().equals("0")){
 //                            Log.i("tag","管理员");
@@ -122,14 +130,16 @@ public class LoggingActivity extends FragmentActivity implements OnClickListener
                     args.putSerializable("dataBean", dataBeen.get(0));
                     intent.putExtras(args);
                     startActivity(intent);
+                    Toast.makeText(LoggingActivity.this,response.message(),Toast.LENGTH_SHORT).show();
                 }
                 else {
-                    Toast.makeText(LoggingActivity.this, ""+response.message(),Toast.LENGTH_SHORT).show();
+                    Toast.makeText(LoggingActivity.this, response.message(),Toast.LENGTH_SHORT).show();
                 }
             }
             @Override
             public void onFailure(Call<LoginBean> call, Throwable t) {
                 Log.i("tag","失败"+t.getMessage());
+                Toast.makeText(LoggingActivity.this,t.getMessage(),Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -148,6 +158,8 @@ public class LoggingActivity extends FragmentActivity implements OnClickListener
         }
         return true;
     }
+
+
 
 //    //跳转到相对应的Fragment
 //    private void setDefaultFragment(Fragment fragment){

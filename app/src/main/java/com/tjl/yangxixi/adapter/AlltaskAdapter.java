@@ -24,16 +24,23 @@ public class AlltaskAdapter extends RecyclerView.Adapter<AlltaskAdapter.MyViewHo
 
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
-        MyViewHolder holder = new MyViewHolder(LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_task, viewGroup,
+        MyViewHolder holder = new MyViewHolder(LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.testtask, viewGroup,
                 false));
         return holder;
     }
 
     @Override
     public void onBindViewHolder(MyViewHolder myViewHolder, int i) {
-        myViewHolder.mName.setText(mList.get(i).getUser_name());
         myViewHolder.mState.setText(mList.get(i).getDistribute_type());
         myViewHolder.mTime.setText(mList.get(i).getPay_time());
+        myViewHolder.mName.setText(mList.get(i).getUser_name());
+        if (mList.get(i).getDistribute_type().equals("0")){
+            myViewHolder.mState.setText("未分配");
+        }else if(mList.get(i).getSubscriber_type().equals("0")){
+            myViewHolder.mState.setText("未预约");
+        }else if (mList.get(i).getSubscriber_type().equals("1")){
+            myViewHolder.mState.setText("已预约");
+        }
     }
 
     @Override
@@ -52,7 +59,7 @@ public class AlltaskAdapter extends RecyclerView.Adapter<AlltaskAdapter.MyViewHo
         {
             super(view);
             mName = (TextView) view.findViewById(R.id.tv_taskname);
-            mState = (TextView) view.findViewById(R.id.tv_taskstate);
+            mState = (TextView) view.findViewById(R.id.tv_taskallocation);
             mTime = (TextView) view.findViewById(R.id.tv_tasktime);
         }
     }

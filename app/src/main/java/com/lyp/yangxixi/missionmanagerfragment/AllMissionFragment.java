@@ -9,10 +9,11 @@ import com.lyp.jsonbean.AllTaskBean;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -32,27 +33,19 @@ public class AllMissionFragment extends OriginalFragment{
 	private AlltaskAdapter mAdapter;
 	private GridLayoutManager mGridLayoutManager;
 	private List<AllTaskBean.DataBean> mList = new ArrayList<>();
+	TextView mCounts;
 
 	public View createView(LayoutInflater inflater, ViewGroup container,
 						   Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		v = inflater.inflate(R.layout.fragment_allmission, null,false);
+		mCounts = (TextView) v.findViewById(R.id.tv_counts);
 		mRecyclerView = (RecyclerView) v.findViewById(R.id.grid_recycler);
 		mGridLayoutManager = new GridLayoutManager(getActivity(), 2);
 		mRecyclerView.setLayoutManager(mGridLayoutManager);
-
-		AllTaskBean.DataBean a = new AllTaskBean.DataBean();
-		a.setUser_name("123");
-		mList.add(a);
-
-//		mAdapter = new AlltaskAdapter(R.layout.task_item);
-//		// 实例化 RecyclerView Adapter
-//		mRecyclerView.setAdapter(mAdapter);
-
 		mAdapter = new AlltaskAdapter(mList);
 		// 实例化 RecyclerView Adapter
 		mRecyclerView.setAdapter(mAdapter);
-
 		try {
 			Task();
 		} catch (IOException e) {
@@ -76,21 +69,24 @@ public class AllMissionFragment extends OriginalFragment{
 		call.enqueue(new Callback<AllTaskBean>() {
 			@Override
 			public void onResponse(Call<AllTaskBean> call, final Response<AllTaskBean> response) {
-				Log.i("tag","成功"+response.body().getData().size());
-				getActivity().runOnUiThread(new Runnable() {
-					@Override
-					public void run() {
-						mList.addAll(response.body().getData());
-						mAdapter.notifyDataSetChanged();
-					}
-				});
+//				Log.i("tag","成功"+response.body().getData().size());
+                if (response.body().getResult()== 1 ) {
+                    getActivity().runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            mList.addAll(response.body().getData());
+                            mAdapter.notifyDataSetChanged();
+                        }
+                    });
+                }else {
+                    Toast.makeText(getActivity(),response.message(),Toast.LENGTH_SHORT).show();
+                }
 			}
-
 			@Override
 			public void onFailure(Call<AllTaskBean> call, Throwable t) {
-				Log.i("tag","失败！"+t.getMessage());
+//				Log.i("tag","失败！"+t.getMessage());
+                Toast.makeText(getActivity(),t.getMessage(),Toast.LENGTH_SHORT).show();
 			}
 		});
 	}
-
 }

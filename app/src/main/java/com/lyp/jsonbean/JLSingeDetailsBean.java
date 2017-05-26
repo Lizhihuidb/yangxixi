@@ -5,9 +5,8 @@ import java.util.List;
 
 /**
  * 作者:ChenXi 时间:2017/5/25 18: 54
- * QQ:985478538
  */
-
+//抢单详情
 public class JLSingeDetailsBean implements Serializable{
 
     /**

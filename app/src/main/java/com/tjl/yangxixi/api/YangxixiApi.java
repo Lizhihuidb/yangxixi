@@ -1,6 +1,7 @@
 package com.tjl.yangxixi.api;
 
 import com.lyp.jsonbean.AllTaskBean;
+import com.lyp.jsonbean.JlSingeDetectionBean;
 import com.lyp.jsonbean.LoginBean;
 
 import retrofit2.Call;
@@ -28,7 +29,12 @@ public interface YangxixiApi {
              @Field("userName") String userName,
              @Field("userPwd") String userPwd);
 
-    //抢单
+    //抢单(检测)
+    @GET("app/robOrder")
+    Call<JlSingeDetectionBean> getSingDetection(
+            @Query("server_select") String server_select,
+            @Query("page") int page,
+            @Query("c_id") int c_id);
 
 
     //所有任务

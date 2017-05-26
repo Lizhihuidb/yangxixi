@@ -7,68 +7,68 @@
 	android:layout_height="wrap_content"
 	android:background="@color/bg"
 	 >
- 	 <com.lyp.percent.PercentRelativeLayout 
+ 	 <com.lyp.percent.PercentRelativeLayout
         android:id="@+id/percent_title"
 	    android:layout_width="0dp"
 	    android:layout_height="0dp"
 	    app:layout_heightPercent="10%"
-	    app:layout_widthPercent="100%" 
+	    app:layout_widthPercent="100%"
 	    android:layout_centerHorizontal="true"
 	    >
-	 <RelativeLayout 
+	 <RelativeLayout
 	     android:layout_width="match_parent"
 	     android:layout_height="match_parent"
 	     app:layout_marginLeftPercent="5%"
 	     app:layout_marginRightPercent="5%"
 	     >
-	    <TextView 
+	    <TextView
 	        android:id="@+id/tv_fuwuleixing"
 	        android:layout_width="wrap_content"
 	        android:layout_height="match_parent"
 	        android:text="服务类型:"
 	        android:gravity="center"
-	        /> 
-	    <TextView 
+	        />
+	    <TextView
 	        android:layout_width="wrap_content"
 	        android:layout_height="match_parent"
 	        android:text="车内空气净化服务"
 	        android:gravity="center"
 	        android:layout_toRightOf="@+id/tv_fuwuleixing"
-	        />     
-	   <ImageView 
+	        />
+	   <ImageView
 	       android:layout_width="wrap_content"
 	       android:layout_height="match_parent"
 	       android:src="@drawable/enter_the"
 	       android:layout_alignParentRight="true"
-	       />  
-	   
-	 </RelativeLayout>   
- 	<View 
+	       />
+
+	 </RelativeLayout>
+ 	<View
 	       android:layout_width="0dp"
 	       android:layout_height="0dp"
 	       app:layout_heightPercent="2%"
 	       app:layout_widthPercent="100%"
-	       android:layout_alignParentBottom="true" 
+	       android:layout_alignParentBottom="true"
 	       android:background="@color/view_hui"
-	       />  
+	       />
    </com.lyp.percent.PercentRelativeLayout>
    	 <com.lyp.percent.PercentRelativeLayout
-   	     android:id="@+id/percent_detauls" 
+   	     android:id="@+id/percent_detauls"
 	    android:layout_width="0dp"
 	    android:layout_height="0dp"
 	    app:layout_heightPercent="20%"
-	    app:layout_widthPercent="100%" 
+	    app:layout_widthPercent="100%"
 	    android:layout_centerHorizontal="true"
 	    android:layout_centerVertical="true"
 	    android:layout_below="@+id/percent_title"
 	    android:gravity="center"
 	    >
-	 <RelativeLayout 
+	 <RelativeLayout
 	     android:id="@+id/rl_a"
 	     app:layout_marginLeftPercent="5%"
 	     android:layout_width="0dp"
 	     android:layout_height="wrap_content"
-	     app:layout_widthPercent="70%" 
+	     app:layout_widthPercent="70%"
 	     >
 	    <TextView 
 	        android:id="@+id/tv_qiwangtime"
@@ -86,7 +86,7 @@
 	        android:gravity="center"
 	        android:textColor="@color/view_hui"
 	        android:layout_toRightOf="@+id/tv_qiwangtime"
-	        />  
+	        />
 	    <TextView 
 	        android:id="@+id/kongbai"
 	        android:layout_width="wrap_content"
@@ -106,7 +106,7 @@
 	        android:layout_toRightOf="@+id/kongbai"
 	        />   
 	     
-	 </RelativeLayout>   
+	 </RelativeLayout>
  	 <RelativeLayout 
  	     android:id="@+id/rl_b"
 	     android:layout_height="wrap_content"
@@ -133,7 +133,7 @@
 	        android:textColor="@color/view_hui"
 	        android:layout_toRightOf="@+id/tv_chexing"
 	        />  
-	    <TextView 
+	    <TextView
 	        android:id="@+id/kongbai1"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
@@ -141,7 +141,7 @@
 	        android:gravity="center"
 	        android:textColor="@color/view_hui"
 	        android:layout_toRightOf="@+id/tv_chezi"
-	        />   
+	        />
 	     
 	     <TextView 
 	        android:id="@+id/chepai"
@@ -208,5 +208,5 @@
  	     
  	 </RelativeLayout>
    </com.lyp.percent.PercentRelativeLayout>
-    
+
 </com.lyp.percent.PercentRelativeLayout>
