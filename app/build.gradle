@@ -40,5 +40,8 @@ dependencies {
     compile 'com.squareup.retrofit2:retrofit:2.3.0'
     compile 'com.squareup.retrofit2:converter-gson:2.3.0'
     testCompile 'junit:junit:4.12'
+    //适配器
     compile 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.16'
+    //万能工具
+    compile 'com.blankj:utilcode:1.5.1'
 }

@@ -19,6 +19,7 @@ import com.tjl.yangxixi.view.FragmentTabHost;
 public class MainActivity extends BaseActivity {
 	private FragmentTabHost host;
 	public static MainActivity instance = null;
+	public LoginBean.DataBean dataBean;
 	@Override
 	protected void initView(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
@@ -29,8 +30,8 @@ public class MainActivity extends BaseActivity {
 		host.setTextsColor(getResources().getColor(R.color.bg_bottom_default));
 		host.setTextsSize(13);
 
-		LoginBean.DataBean DataBean = (LoginBean.DataBean) getIntent().getExtras().get("dataBean");
-		if(DataBean.getManager().equals("1")){
+		dataBean = (LoginBean.DataBean) getIntent().getExtras().get("dataBean");
+		if(dataBean.getManager().equals("1")){
 			host.addTab(host.newTabSpec().setIndicator(getString(R.string.txt_home)).setIndicator(R.drawable.h_home_page).setIndicatorSelected(R.drawable.j_home_page),new HomeFragment(host));//销售经理首页
 			host.addTab(host.newTabSpec().setIndicator(getString(R.string.txt_singe)).setIndicator(R.drawable.h_grab_a_single).setIndicatorSelected(R.drawable.j_grab_a_single), new SingeFragment());//销售经理抢单界面
 			host.addTab(host.newTabSpec().setIndicator(getString(R.string.txt_mission)).setIndicator(R.drawable.h_task).setIndicatorSelected(R.drawable.j_task), new MissionManagerFragment());//新版-销售经理订单列表

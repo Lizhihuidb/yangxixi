@@ -73,13 +73,6 @@ public class AllTaskBean implements Serializable{
                 ", data=" + data +
                 '}';
     }
-    public AllTaskBean(int result, String message, int counts, int next_page, List<DataBean> data) {
-        this.result = result;
-        this.message = message;
-        this.counts = counts;
-        this.next_page = next_page;
-        this.data = data;
-    }
 
     public static class DataBean implements Serializable{
         /**

@@ -169,7 +169,4 @@ public class MissionManagerFragment extends OriginalFragment implements OnClickL
 				break;
 		}
 	}
-
-
-
 }

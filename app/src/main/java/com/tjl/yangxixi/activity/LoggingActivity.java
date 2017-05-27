@@ -1,7 +1,6 @@
 package com.tjl.yangxixi.activity;
 
 
-import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -15,10 +14,10 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.blankj.utilcode.util.SPUtils;
 import com.tjl.yangxixi.R;
 import com.tjl.yangxixi.api.YangxixiApi;
 import com.lyp.jsonbean.LoginBean;
-import com.tjl.yangxixi.manager.SharePreferenceManager;
 
 import java.io.IOException;
 import java.util.List;
@@ -29,6 +28,9 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
+/**
+ * 登录
+ */
 public class LoggingActivity extends FragmentActivity implements OnClickListener{
     private TextView mLoginimg;
     private EditText mUserName;
@@ -37,24 +39,19 @@ public class LoggingActivity extends FragmentActivity implements OnClickListener
     private TextView mForgetPwd;
     private String userName;
     private String userPwd;
-    SharedPreferences sp;
-//    FragmentManager fm;
-//    FragmentTransaction ft;
+    SPUtils sputils;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_logging);
-        start();
+        sputils = new SPUtils("login");
         initview();
-//        sp = getSharedPreferences("login", Activity.MODE_PRIVATE);
-//        SharedPreferences.Editor editor = sp.edit();
-//        editor.putString("Name", userName);
-//        editor.commit();
-//        //同样，在读取SharedPreferences数据前要实例化出一个SharedPreferences对象
-//        // 使用getString方法获得value，注意第2个参数是value的默认值
-//        sp.getString("Name", userName);
+        mUserName.setText(sputils.getString("name",""));
+        //暂时记住密码
+        mUserPwd.setText(sputils.getString("pwd",""));
+        start();
     }
 
     private void initview(){
@@ -117,6 +114,10 @@ public class LoggingActivity extends FragmentActivity implements OnClickListener
                 LoginBean bean = response.body();
                 if (bean.getResult() == 1) {
                     List<LoginBean.DataBean> dataBeen = bean.getData();
+                    sputils.put("name",dataBeen.get(0).getUser());
+                    //暂时记住密码
+                    sputils.put("pwd",dataBeen.get(0).getPwd());
+
 //                        if (dataBeen.get(0).getManager().equals("0")){
 //                            Log.i("tag","管理员");
 //                            setDefaultFragment(HomeFragment.newInstance(dataBeen.get(0)));

@@ -40,8 +40,10 @@ public interface YangxixiApi {
     //所有任务
     @GET("app/allMission")
     Call<AllTaskBean> getAllTask(
-            @Query("c_id") int c_id,
+            @Query("c_id") String c_id,
             @Query("server_select") String server_select,
             @Query("page") int page);
+
+
 
 }

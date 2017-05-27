@@ -3,6 +3,7 @@ package com.tjl.yangxixi;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.blankj.utilcode.util.Utils;
 import com.tjl.yangxixi.bean.UserInfoBean;
 
 import android.app.Application;
@@ -22,6 +23,7 @@ public class MyApplication extends Application{
 	public void onCreate() {
 		super.onCreate();
 		myApplication = this;
+		Utils.init(this);
 		
 	}
 
