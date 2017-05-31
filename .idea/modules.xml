@@ -2,11 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Yangxixi.iml" filepath="$PROJECT_DIR$/Yangxixi.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/library/library.iml" filepath="$PROJECT_DIR$/library/library.iml" />
       <module fileurl="file://$PROJECT_DIR$/thirdPart/librarypull/librarypull.iml" filepath="$PROJECT_DIR$/thirdPart/librarypull/librarypull.iml" />
       <module fileurl="file://$PROJECT_DIR$/thirdPart/thirdPart.iml" filepath="$PROJECT_DIR$/thirdPart/thirdPart.iml" />
+      <module fileurl="file://$PROJECT_DIR$/yangxixi.iml" filepath="$PROJECT_DIR$/yangxixi.iml" />
     </modules>
   </component>
 </project>

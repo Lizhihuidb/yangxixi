@@ -34,7 +34,7 @@ public interface YangxixiApi {
     Call<JlSingeDetectionBean> getSingDetection(
             @Query("server_select") String server_select,
             @Query("page") int page,
-            @Query("c_id") int c_id);
+            @Query("c_id") String c_id);
 
 
     //所有任务

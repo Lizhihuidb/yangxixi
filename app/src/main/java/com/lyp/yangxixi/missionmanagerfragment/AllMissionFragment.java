@@ -5,7 +5,7 @@ import com.tjl.yangxixi.OriginalFragment;
 import com.tjl.yangxixi.R;
 import com.tjl.yangxixi.activity.DetailsClueActivity;
 import com.tjl.yangxixi.activity.MainActivity;
-import com.tjl.yangxixi.adapter.AlltaskAdapter;
+import com.lyp.adapters.AlltaskAdapter;
 import com.tjl.yangxixi.api.YangxixiApi;
 import com.lyp.jsonbean.AllTaskBean;
 
@@ -16,7 +16,6 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
