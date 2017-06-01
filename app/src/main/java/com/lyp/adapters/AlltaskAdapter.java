@@ -57,7 +57,6 @@ public class AlltaskAdapter extends RecyclerView.Adapter<AlltaskAdapter.MyViewHo
         this.mListener = listener;
     }
 
-
     public class MyViewHolder extends RecyclerView.ViewHolder{
 
         TextView mName;

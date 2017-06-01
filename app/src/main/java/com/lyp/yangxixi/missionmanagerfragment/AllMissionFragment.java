@@ -28,7 +28,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
-
+//所有任务
 public class AllMissionFragment extends OriginalFragment{
 	View v;
 	private RecyclerView mRecyclerView;
@@ -36,7 +36,7 @@ public class AllMissionFragment extends OriginalFragment{
 	private GridLayoutManager mGridLayoutManager;
 	private List<AllTaskBean.DataBean> mList = new ArrayList<>();
 	private LoginBean.DataBean bean;
-	TextView mCounts;
+	private TextView mCounts;
 	//定义一个页码为1
 	int pages=1;
 
@@ -70,7 +70,6 @@ public class AllMissionFragment extends OriginalFragment{
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-
 	}
 
 	@Override
@@ -89,6 +88,7 @@ public class AllMissionFragment extends OriginalFragment{
 			@Override
 			public void onResponse(Call<AllTaskBean> call, final Response<AllTaskBean> response) {
                 if (response.body().getResult()== 1 ) {
+					mCounts.setText(response.body().getCounts());
                     getActivity().runOnUiThread(new Runnable() {
                         @Override
                         public void run() {

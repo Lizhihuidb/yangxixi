@@ -1,6 +1,8 @@
 package com.tjl.yangxixi.api;
 
 import com.lyp.jsonbean.AllTaskBean;
+import com.lyp.jsonbean.JLCarBean;
+import com.lyp.jsonbean.JLSingeIndoorBean;
 import com.lyp.jsonbean.JlSingeDetectionBean;
 import com.lyp.jsonbean.LoginBean;
 
@@ -32,6 +34,20 @@ public interface YangxixiApi {
     //抢单(检测)
     @GET("app/robOrder")
     Call<JlSingeDetectionBean> getSingDetection(
+            @Query("server_select") String server_select,
+            @Query("page") int page,
+            @Query("c_id") String c_id);
+
+    //车内
+    @GET("app/robOrder")
+    Call<JLCarBean> getSingCar(
+            @Query("c_id") String c_id,
+            @Query("server_select") String server_select,
+            @Query("page") int page);
+
+    //室内
+    @GET("app/robOrder")
+    Call<JLSingeIndoorBean> getSingIndoor(
             @Query("server_select") String server_select,
             @Query("page") int page,
             @Query("c_id") String c_id);

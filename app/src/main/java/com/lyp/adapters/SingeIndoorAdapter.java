@@ -8,37 +8,38 @@ import android.widget.Button;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.lyp.jsonbean.JlSingeDetectionBean;
+import com.lyp.jsonbean.JLSingeIndoorBean;
 import com.tjl.yangxixi.R;
 
 import java.util.List;
-
 /**
  * 作者:ChenXi 时间:2017/5/31 14: 26
  */
-//抢单(检测)
-public class SingeAdapter extends RecyclerView.Adapter<SingeAdapter.MyViewHolder>{
+//抢单(室内)
+public class SingeIndoorAdapter extends RecyclerView.Adapter<SingeIndoorAdapter.MyViewHolder>{
 
-    private List<JlSingeDetectionBean.DataBean> mList;
-    private SingeAdapter.MyItemClickListener mListener;
-    public SingeAdapter(List<JlSingeDetectionBean.DataBean> list) {
+    private List<JLSingeIndoorBean.DataBean> mList;
+    private SingeIndoorAdapter.MyItemClickListener mListener;
+    public SingeIndoorAdapter(List<JLSingeIndoorBean.DataBean> list) {
         mList = list;
     }
 
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
-        SingeAdapter.MyViewHolder holder = new SingeAdapter.MyViewHolder(LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.fragment_singe_item, viewGroup,
+        SingeIndoorAdapter.MyViewHolder holder = new SingeIndoorAdapter.MyViewHolder(LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.fragment_singe_item, viewGroup,
                 false));
         return holder;
     }
 
     @Override
     public void onBindViewHolder(MyViewHolder myViewHolder, int i) {
+            myViewHolder.mType.setText("治理");//检测类型
             myViewHolder.mTime.setText(mList.get(i).getExpected_time());//期望时间
-            myViewHolder.mType.setText(mList.get(i).getDetection_type());//检测类型
             myViewHolder.mRegion.setText(mList.get(i).getU_addres());//地区
-            myViewHolder.mQuote.setText(mList.get(i).getDetection_price());//报价
+            myViewHolder.mQuote.setText(mList.get(i).getSquare_meter_price());//报价
+            myViewHolder.mArea.setText(mList.get(i).getCovered_area());//建筑面积
             myViewHolder.mHome.setVisibility(View.VISIBLE);
+            myViewHolder.mSingeArea.setVisibility(View.VISIBLE);
     }
 
     @Override
@@ -50,7 +51,7 @@ public class SingeAdapter extends RecyclerView.Adapter<SingeAdapter.MyViewHolder
      * 设置Item点击监听
      * @param listener
      */
-    public void setOnItemClickListener(SingeAdapter.MyItemClickListener listener){
+    public void setOnItemClickListener(SingeIndoorAdapter.MyItemClickListener listener){
         this.mListener = listener;
     }
 
@@ -62,6 +63,8 @@ public class SingeAdapter extends RecyclerView.Adapter<SingeAdapter.MyViewHolder
         TextView mQuote;//报价
         TextView mHome;//是否居家
         Button mGrab;
+        RelativeLayout mSingeArea;
+        TextView mArea;
         RelativeLayout mSingeAll;
 
         public MyViewHolder(View view)
@@ -73,6 +76,8 @@ public class SingeAdapter extends RecyclerView.Adapter<SingeAdapter.MyViewHolder
             mQuote = (TextView) view.findViewById(R.id.tv_quote);
             mGrab = (Button) view.findViewById(R.id.btn_grab_single);
             mHome = (TextView) view.findViewById(R.id.tv_jujia);
+            mSingeArea = (RelativeLayout) view.findViewById(R.id.rl_singe_area);
+            mArea = (TextView) view.findViewById(R.id.tv_area);
             mSingeAll = (RelativeLayout) view.findViewById(R.id.rl_singeAll);
             mSingeAll.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -82,6 +87,7 @@ public class SingeAdapter extends RecyclerView.Adapter<SingeAdapter.MyViewHolder
             });
         }
     }
+
     /**
      * item点击接口
      */

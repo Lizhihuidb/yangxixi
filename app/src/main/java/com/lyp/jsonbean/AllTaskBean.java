@@ -19,7 +19,7 @@ public class AllTaskBean implements Serializable{
 
     private int result;
     private String message;
-    private int counts;
+    private String counts;
     private int next_page;
     private List<DataBean> data;
 
@@ -39,11 +39,11 @@ public class AllTaskBean implements Serializable{
         this.message = message;
     }
 
-    public int getCounts() {
+    public String getCounts() {
         return counts;
     }
 
-    public void setCounts(int counts) {
+    public void setCounts(String counts) {
         this.counts = counts;
     }
 
@@ -68,7 +68,7 @@ public class AllTaskBean implements Serializable{
         return "AllTaskBean{" +
                 "result=" + result +
                 ", message='" + message + '\'' +
-                ", counts=" + counts +
+                ", counts='" + counts + '\'' +
                 ", next_page=" + next_page +
                 ", data=" + data +
                 '}';

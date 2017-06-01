@@ -34,6 +34,16 @@
 			android:layout_toRightOf="@id/singe_server"
 			android:textSize="18sp"
 	        />
+		 <TextView
+			 android:id="@+id/tv_jujia"
+			 android:layout_width="wrap_content"
+			 android:layout_height="match_parent"
+			 android:text="(居家服务)"
+			 android:gravity="center"
+			 android:layout_toRightOf="@id/tv_server_type"
+			 android:textSize="18sp"
+			 android:visibility="gone"
+			 />
 	   <ImageView
 	       android:layout_width="wrap_content"
 	       android:layout_height="match_parent"
@@ -51,10 +61,12 @@
    </RelativeLayout>
 
 	<RelativeLayout
+		android:id="@+id/rl_singeAll"
 		android:layout_width="match_parent"
 		android:layout_height="120dp"
 		android:orientation="vertical"
 		android:background="@color/white"
+		android:clickable="true"
 		>
 	 <LinearLayout
 		 android:layout_width="match_parent"
@@ -95,16 +107,20 @@
 				android:orientation="horizontal"
 				android:layout_marginTop="10dp"
 				>
-
-
+				<RelativeLayout
+					android:id="@+id/rl_singe_region"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					>
 					<TextView
+						android:id="@+id/tv_diqu"
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
 						android:gravity="center"
 						android:text="地区:"
 						android:textColor="@color/black"
-						android:textSize="16sp" />
-
+						android:textSize="16sp"
+						/>
 					<TextView
 						android:id="@+id/tv_region"
 						android:layout_width="wrap_content"
@@ -113,7 +129,56 @@
 						android:text="虹口区"
 						android:textColor="@color/black"
 						android:textSize="16sp"
+						android:layout_toRightOf="@id/tv_diqu"
+						/>
+				</RelativeLayout>
+			<RelativeLayout
+				android:id="@+id/rl_singe_car"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:visibility="gone"
+				>
+					<TextView
+						android:id="@+id/carxing"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:gravity="center"
+						android:text="车型:"
+						android:textColor="@color/black"
+						android:textSize="16sp" />
+					<TextView
+						android:id="@+id/tv_carxing"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:gravity="center"
+						android:text="SUV"
+						android:textColor="@color/black"
+						android:textSize="16sp"
+						android:layout_toRightOf="@id/carxing"
 					/>
+					<TextView
+						android:id="@+id/tv_carpai"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:gravity="center"
+						android:text="车牌:"
+						android:textColor="@color/black"
+						android:textSize="16sp"
+						android:layout_marginLeft="20dp"
+						android:layout_toRightOf="@id/tv_carxing"
+						/>
+
+					<TextView
+						android:id="@+id/tv_carnumber"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:gravity="center"
+						android:text="沪BBBBBBB"
+						android:textColor="@color/black"
+						android:textSize="16sp"
+						android:layout_toRightOf="@id/tv_carpai"
+						/>
+				</RelativeLayout>
 			</LinearLayout>
 
 			<LinearLayout
@@ -122,8 +187,13 @@
 				android:orientation="horizontal"
 				android:layout_marginTop="10dp"
 				>
-
+			<RelativeLayout
+				android:id="@+id/rl_baojia"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				>
 				<TextView
+					android:id="@+id/tv_baojia"
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
 					android:gravity="center"
@@ -136,28 +206,81 @@
 					android:layout_height="wrap_content"
 					android:gravity="center"
 					android:text="2000"
-					android:textSize="16sp" />
+					android:textSize="16sp"
+					android:layout_toRightOf="@id/tv_baojia"
+					/>
 				<TextView
+					android:id="@+id/tv_yuan"
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
 					android:gravity="center"
 					android:text="元"
-					android:textSize="16sp" />
+					android:textSize="16sp"
+					android:layout_toRightOf="@id/tv_quote"
+					/>
+				</RelativeLayout>
+			<RelativeLayout
+				android:id="@+id/rl_singe_area"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:visibility="gone"
+				>
+				<TextView
+					android:id="@+id/area"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:gravity="center"
+					android:text="建筑面积:"
+					android:textColor="@color/black"
+					android:textSize="16sp"
+					android:layout_marginLeft="20dp"
+					/>
+
+				<TextView
+					android:id="@+id/tv_area"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:gravity="center"
+					android:text="120"
+					android:textColor="@color/black"
+					android:textSize="16sp"
+					android:layout_toRightOf="@id/area"
+					/>
+				<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:gravity="center"
+					android:text="平方米"
+					android:textColor="@color/black"
+					android:textSize="16sp"
+					android:layout_toRightOf="@id/tv_area"
+					/>
+			</RelativeLayout>
 			</LinearLayout>
  	</LinearLayout>
 		<RelativeLayout
-			android:layout_width="100dp"
+			android:layout_width="70dp"
 			android:layout_height="match_parent"
 			android:layout_alignParentRight="true"
-			android:gravity="center">
+			android:gravity="center"
+			>
 
 			<Button
 				android:id="@+id/btn_grab_single"
-				android:layout_width="80dp"
+				android:layout_width="60dp"
 				android:layout_height="wrap_content"
 				android:background="@drawable/close_button"
-				android:text="抢单"
+				android:text="抢 单"
 				android:textColor="@color/white"
+				/>
+			<Button
+				android:id="@+id/btn_join_single"
+				android:layout_width="60dp"
+				android:layout_height="wrap_content"
+				android:background="@drawable/cheng_button"
+				android:text="接 单"
+				android:textColor="@color/white"
+				android:visibility="gone"
 				/>
 
 		</RelativeLayout>
