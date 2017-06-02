@@ -1,76 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.lyp.percent.PercentRelativeLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
 	android:layout_width="match_parent"
 	android:layout_height="match_parent"
 	android:background="@color/view_bg"
+	android:orientation="vertical"
 	 >
- 	 <com.lyp.percent.PercentRelativeLayout 
-        android:id="@+id/percent_title"
-	    android:layout_width="0dp"
-	    android:layout_height="0dp"
-	    app:layout_heightPercent="10%"
-	    app:layout_widthPercent="100%" 
-	    android:layout_centerHorizontal="true"
-	    android:background="@color/white"
-	    >
-	 <RelativeLayout 
+ 	<LinearLayout
 	     android:layout_width="match_parent"
-	     android:layout_height="match_parent"
-	     app:layout_marginLeftPercent="5%"
-	     app:layout_marginRightPercent="5%"
-	     >
-	    <TextView 
-	        android:id="@+id/tv_fuwuleixing"
-	        android:layout_width="wrap_content"
-	        android:layout_height="match_parent"
-	        android:text="服务类型:"
-	        android:gravity="center"
-	        /> 
-	    <TextView 
-	        android:layout_width="wrap_content"
-	        android:layout_height="match_parent"
-	        android:text="车内空气净化服务"
-	        android:gravity="center"
-	        android:layout_toRightOf="@+id/tv_fuwuleixing"
-	        />     
-	  
-	   
-	 </RelativeLayout>   
- 	<View 
-	       android:layout_width="0dp"
-	       android:layout_height="0dp"
-	       app:layout_heightPercent="2%"
-	       app:layout_widthPercent="100%"
-	       android:layout_alignParentBottom="true" 
-	       android:background="@color/view_hui"
-	       />  
-   </com.lyp.percent.PercentRelativeLayout>
-   	 <com.lyp.percent.PercentRelativeLayout
-   	    android:id="@+id/percent_detauls" 
-	    android:layout_width="0dp"
-	    android:layout_height="0dp"
-	    app:layout_heightPercent="8%"
-	    app:layout_widthPercent="100%" 
-	    android:layout_centerHorizontal="true"
-	    android:layout_below="@+id/percent_title"
-	    android:background="@color/white"
-	    >
- 	<LinearLayout 
-	     android:layout_width="match_parent"
-	     android:layout_height="match_parent"
+	     android:layout_height="wrap_content"
 	     android:orientation="horizontal"
+		 android:padding="8dp"
+		 android:background="@color/white"
 	     >
-	    <TextView 
+	    <TextView
 	        android:layout_width="0dp"
 	        android:layout_height="match_parent"
 	        android:layout_weight="1"
 	        android:text="姓名"
 	        android:gravity="center"
 	        /> 
-	  <TextView 
+	  <TextView
+		  	android:id="@+id/tv_cardetailsname"
 	        android:layout_width="0dp"
 	        android:layout_height="match_parent"
 	        android:text="徐先生"
@@ -85,21 +36,13 @@
 	       android:layout_alignParentBottom="true" 
 	       android:background="@color/view_hui"
 	       />
-   </com.lyp.percent.PercentRelativeLayout>
-   <com.lyp.percent.PercentRelativeLayout
-   	    android:id="@+id/percent_tel" 
-	    android:layout_width="0dp"
-	    android:layout_height="0dp"
-	    app:layout_heightPercent="8%"
-	    app:layout_widthPercent="100%" 
-	    android:layout_centerHorizontal="true"
-	    android:layout_below="@+id/percent_detauls"
-	    android:background="@color/white"
-	    >
+
  	<LinearLayout 
 	     android:layout_width="match_parent"
-	     android:layout_height="match_parent"
+	     android:layout_height="wrap_content"
 	     android:orientation="horizontal"
+		 android:padding="8dp"
+		 android:background="@color/white"
 	     >
 	    <TextView 
 	        android:layout_width="0dp"
@@ -108,7 +51,8 @@
 	        android:layout_weight="1"
 	        android:gravity="center"
 	        /> 
-	  <TextView 
+	  <TextView
+		    android:id="@+id/tv_singedatailsphone"
 	        android:layout_width="0dp"
 	        android:layout_height="match_parent"
 	        android:text="138383838"
@@ -123,37 +67,56 @@
 	       android:layout_alignParentBottom="true" 
 	       android:background="@color/view_hui"
 	       />
-   </com.lyp.percent.PercentRelativeLayout>
-      <com.lyp.percent.PercentRelativeLayout
-   	    android:id="@+id/percent_chexing" 
-	    android:layout_width="0dp"
-	    android:layout_height="0dp"
-	    app:layout_heightPercent="8%"
-	    app:layout_widthPercent="100%" 
-	    android:layout_centerHorizontal="true"
-	    android:layout_below="@+id/percent_tel"
-	    android:background="@color/white"
-	    >
+
  	<LinearLayout 
 	     android:layout_width="match_parent"
-	     android:layout_height="match_parent"
+	     android:layout_height="wrap_content"
 	     android:orientation="horizontal"
+		 android:padding="8dp"
+		 android:background="@color/white"
 	     >
-	    <TextView 
+	<LinearLayout
+		android:id="@+id/ll_car"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		>
+	    <TextView
 	        android:layout_width="0dp"
 	        android:layout_height="match_parent"
 	        android:text="车型"
 	        android:gravity="center"
 	        android:layout_weight="1"
 	        /> 
-	  <TextView 
+	  <TextView
+		    android:id="@+id/tv_cardetailstype"
 	        android:layout_width="0dp"
 	        android:layout_height="match_parent"
 	        android:text="SUV"
 	        android:gravity="center|left"
 	        android:layout_weight="2"
-	        />  
-	   
+	        />
+	</LinearLayout>
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:visibility="gone"
+			>
+			<TextView
+				android:layout_width="0dp"
+				android:layout_height="match_parent"
+				android:text="服务地址"
+				android:gravity="center"
+				android:layout_weight="1"
+				/>
+			<TextView
+				android:id="@+id/tv_detailsaddress"
+				android:layout_width="0dp"
+				android:layout_height="match_parent"
+				android:text="上海市虹口区"
+				android:gravity="center|left"
+				android:layout_weight="2"
+				/>
+		</LinearLayout>
 	 </LinearLayout>   
  	<View 
 	       android:layout_width="match_parent"
@@ -161,22 +124,17 @@
 	       android:layout_alignParentBottom="true" 
 	       android:background="@color/view_hui"
 	       />
-   </com.lyp.percent.PercentRelativeLayout>  
-      <com.lyp.percent.PercentRelativeLayout
-   	    android:id="@+id/percent_pingpai" 
-	    android:layout_width="0dp"
-	    android:layout_height="0dp"
-	    app:layout_heightPercent="8%"
-	    app:layout_widthPercent="100%" 
-	    android:layout_centerHorizontal="true"
-	    android:layout_below="@+id/percent_chexing"
-	    android:background="@color/white"
-	    >
+
  	<LinearLayout 
 	     android:layout_width="match_parent"
-	     android:layout_height="match_parent"
+	     android:layout_height="wrap_content"
 	     android:orientation="horizontal"
+		 android:padding="8dp"
+		 android:background="@color/white"
 	     >
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content">
 	    <TextView 
 	        android:layout_width="0dp"
 	        android:layout_height="match_parent"
@@ -184,14 +142,37 @@
 	        android:gravity="center"
 	        android:layout_weight="1"
 	        /> 
-	  <TextView 
+	  <TextView
+		    android:id="@+id/tv_cardetailsbrand"
 	        android:layout_width="0dp"
 	        android:layout_height="match_parent"
 	        android:text="起亚"
 	        android:gravity="center|left"
 	        android:layout_weight="2"
-	        />  
-	   
+	        />
+		</LinearLayout>
+		<LinearLayout
+			android:id="@+id/ll_location"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:visibility="gone"
+			>
+			<TextView
+				android:layout_width="0dp"
+				android:layout_height="match_parent"
+				android:text="点位选择"
+				android:gravity="center"
+				android:layout_weight="1"
+				/>
+			<TextView
+				android:id="@+id/tv_detailslocation"
+				android:layout_width="0dp"
+				android:layout_height="match_parent"
+				android:text="卧室1"
+				android:gravity="center|left"
+				android:layout_weight="2"
+				/>
+		</LinearLayout>
 	 </LinearLayout>   
  	<View 
 	       android:layout_width="match_parent"
@@ -199,22 +180,17 @@
 	       android:layout_alignParentBottom="true" 
 	       android:background="@color/view_hui"
 	       />
-   </com.lyp.percent.PercentRelativeLayout>
-      <com.lyp.percent.PercentRelativeLayout
-   	    android:id="@+id/percent_cheling" 
-	    android:layout_width="0dp"
-	    android:layout_height="0dp"
-	    app:layout_heightPercent="8%"
-	    app:layout_widthPercent="100%" 
-	    android:layout_centerHorizontal="true"
-	    android:layout_below="@+id/percent_pingpai"
-	    android:background="@color/white"
-	    >
+
  	<LinearLayout 
 	     android:layout_width="match_parent"
-	     android:layout_height="match_parent"
+	     android:layout_height="wrap_content"
 	     android:orientation="horizontal"
+		 android:padding="8dp"
+		 android:background="@color/white"
 	     >
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content">
 	    <TextView 
 	        android:layout_width="0dp"
 	        android:layout_height="match_parent"
@@ -222,14 +198,37 @@
 	        android:text="车龄"
 	        android:gravity="center"
 	        /> 
-	  <TextView 
+	  <TextView
+		    android:id="@+id/tv_cardetailsage"
 	        android:layout_width="0dp"
 	        android:layout_height="match_parent"
 	        android:text="半年以上"
 	        android:gravity="center|left"
 	        android:layout_weight="2"
-	        />  
-	   
+	        />
+	</LinearLayout>
+		<LinearLayout
+			android:id="@+id/ll_type"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:visibility="gone"
+			>
+			<TextView
+				android:layout_width="0dp"
+				android:layout_height="match_parent"
+				android:layout_weight="1"
+				android:text="点类型"
+				android:gravity="center"
+				/>
+			<TextView
+				android:id="@+id/tv_detailstype"
+				android:layout_width="0dp"
+				android:layout_height="match_parent"
+				android:text="一点三项"
+				android:gravity="center|left"
+				android:layout_weight="2"
+				/>
+		</LinearLayout>
 	 </LinearLayout>   
  	<View 
 	       android:layout_width="match_parent"
@@ -237,23 +236,18 @@
 	       android:layout_alignParentBottom="true" 
 	       android:background="@color/view_hui"
 	       />
-   </com.lyp.percent.PercentRelativeLayout>  
-      <com.lyp.percent.PercentRelativeLayout
-   	    android:id="@+id/percent_chepai" 
-	    android:layout_width="0dp"
-	    android:layout_height="0dp"
-	    app:layout_heightPercent="8%"
-	    app:layout_widthPercent="100%" 
-	    android:layout_centerHorizontal="true"
-	    android:layout_below="@+id/percent_cheling"
-	    android:background="@color/white"
-	    >
+
  	
  	<LinearLayout 
 	     android:layout_width="match_parent"
-	     android:layout_height="match_parent"
+	     android:layout_height="wrap_content"
 	     android:orientation="horizontal"
+		 android:padding="8dp"
+		 android:background="@color/white"
 	     >
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content">
 	    <TextView 
 	        android:layout_width="0dp"
 	        android:layout_height="match_parent"
@@ -261,14 +255,37 @@
 	        android:gravity="center"
 	        android:layout_weight="1"
 	        /> 
-	  <TextView 
+	  <TextView
+		    android:id="@+id/tv_cardetailsnumber"
 	        android:layout_width="0dp"
 	        android:layout_height="match_parent"
 	        android:text="沪BBBBBB"
 	        android:gravity="center|left"
 	        android:layout_weight="2"
-	        />  
-	   
+	        />
+	</LinearLayout>
+		<LinearLayout
+			android:id="@+id/ll_assaytype"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:visibility="gone"
+			>
+			<TextView
+				android:layout_width="0dp"
+				android:layout_height="match_parent"
+				android:text="检测类型"
+				android:gravity="center"
+				android:layout_weight="1"
+				/>
+			<TextView
+				android:id="@+id/tv_detailsassaytype"
+				android:layout_width="0dp"
+				android:layout_height="match_parent"
+				android:text="甲醛"
+				android:gravity="center|left"
+				android:layout_weight="2"
+				/>
+		</LinearLayout>
 	 </LinearLayout>   
  	<View 
 	       android:layout_width="match_parent"
@@ -276,21 +293,46 @@
 	       android:layout_alignParentBottom="true" 
 	       android:background="@color/view_hui"
 	       />
-   </com.lyp.percent.PercentRelativeLayout>
-      <com.lyp.percent.PercentRelativeLayout
-   	    android:id="@+id/percent_xiadantime" 
-	    android:layout_width="0dp"
-	    android:layout_height="0dp"
-	    app:layout_heightPercent="8%"
-	    app:layout_widthPercent="100%" 
-	    android:layout_centerHorizontal="true"
-	    android:layout_below="@+id/percent_chepai"
-	    android:background="@color/white"
-	    >
+	<LinearLayout
+		android:id="@+id/ll_area"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:orientation="horizontal"
+		android:padding="8dp"
+		android:background="@color/white"
+		android:visibility="gone"
+		>
+		<TextView
+			android:layout_width="0dp"
+			android:layout_height="match_parent"
+			android:text="面积"
+			android:gravity="center"
+			android:layout_weight="1"
+			/>
+		<TextView
+			android:id="@+id/tv_detailsarea"
+			android:layout_width="0dp"
+			android:layout_height="match_parent"
+			android:text="22"
+			android:gravity="center|left"
+			android:layout_weight="2"
+			/>
+
+	</LinearLayout>
+	<View
+		android:id="@+id/view_area"
+		android:layout_width="match_parent"
+		android:layout_height="0.1sp"
+		android:layout_alignParentBottom="true"
+		android:background="@color/view_hui"
+		android:visibility="gone"
+		/>
  	<LinearLayout 
 	     android:layout_width="match_parent"
-	     android:layout_height="match_parent"
+	     android:layout_height="wrap_content"
 	     android:orientation="horizontal"
+		 android:padding="8dp"
+		 android:background="@color/white"
 	     >
 	    <TextView 
 	        android:layout_width="0dp"
@@ -299,7 +341,8 @@
 	        android:gravity="center"
 	        android:layout_weight="1"
 	        /> 
-	  <TextView 
+	  <TextView
+		    android:id="@+id/tv_cardetailstime"
 	        android:layout_width="0dp"
 	        android:layout_height="match_parent"
 	        android:text="2017年5月20日"
@@ -314,22 +357,13 @@
 	       android:layout_alignParentBottom="true" 
 	       android:background="@color/view_hui"
 	       />
-   </com.lyp.percent.PercentRelativeLayout>  
-        <com.lyp.percent.PercentRelativeLayout
-   	    android:id="@+id/percent_dingdanhao" 
-	    android:layout_width="0dp"
-	    android:layout_height="0dp"
-	    app:layout_heightPercent="8%"
-	    app:layout_widthPercent="100%" 
-	    android:layout_centerHorizontal="true"
-	    android:layout_below="@+id/percent_xiadantime"
-	    android:background="@color/white"
-	    >
+
  	<LinearLayout 
 	     android:layout_width="match_parent"
-	     android:layout_height="match_parent"
+	     android:layout_height="wrap_content"
 	     android:orientation="horizontal"
-	     
+	     android:padding="8dp"
+		 android:background="@color/white"
 	     >
 	    <TextView 
 	        android:layout_width="0dp"
@@ -338,7 +372,8 @@
 	        android:gravity="center"
 	        android:layout_weight="1"
 	        /> 
-	  <TextView 
+	  <TextView
+		  	android:id="@+id/tv_cardetailsordernumber"
 	        android:layout_width="0dp"
 	        android:layout_height="match_parent"
 	        android:text="45465421851210"
@@ -353,31 +388,4 @@
 	       android:layout_alignParentBottom="true" 
 	       android:background="@color/view_hui"
 	       />
- 	
-   </com.lyp.percent.PercentRelativeLayout>  
-  <RelativeLayout 
-	     app:layout_widthPercent="100%" 
-	     app:layout_heightPercent="10%"
-		 android:clickable="true"
-		 android:layout_alignParentBottom="true"
-		 android:background="@color/white"
- 	     >
-	 <com.lyp.percent.PercentRelativeLayout 
-	    android:layout_width="match_parent"
-	    android:layout_height="match_parent"
-	    android:layout_centerHorizontal="true"
-	    android:layout_centerVertical="true"
-	    android:gravity="center"
-	    >
- 	  <Button 
- 	      android:id="@+id/percent_button"
- 	      app:layout_widthPercent="90%" 
-	      app:layout_heightPercent="80%"
- 	      android:text="抢单"
- 	      android:textSize="16sp"
- 	      android:background="@drawable/shap_button_radius"
- 	      android:textColor="@color/white"
- 	      />   
- 	   </com.lyp.percent.PercentRelativeLayout>  
- 	 </RelativeLayout>   
-</com.lyp.percent.PercentRelativeLayout>
+</LinearLayout>

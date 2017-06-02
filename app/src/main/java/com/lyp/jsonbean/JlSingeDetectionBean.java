@@ -73,7 +73,7 @@ public class JlSingeDetectionBean implements Serializable{
                 '}';
     }
 
-    public static class DataBean {
+    public static class DataBean implements Serializable{
         /**
          * o_id : 157
          * server_type : 第三方检测服务

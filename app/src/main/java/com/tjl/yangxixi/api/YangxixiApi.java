@@ -1,6 +1,7 @@
 package com.tjl.yangxixi.api;
 
 import com.lyp.jsonbean.AllTaskBean;
+import com.lyp.jsonbean.CarOrdersDetailsBean;
 import com.lyp.jsonbean.JLCarBean;
 import com.lyp.jsonbean.JLSingeIndoorBean;
 import com.lyp.jsonbean.JlSingeDetectionBean;
@@ -61,5 +62,9 @@ public interface YangxixiApi {
             @Query("page") int page);
 
 
+    //接单详情(车内)/抢单(室内、第三方检测)
+    @GET("app/orderDetails")
+    Call<CarOrdersDetailsBean> getCarOrders(
+            @Query("o_id") String o_id);
 
 }

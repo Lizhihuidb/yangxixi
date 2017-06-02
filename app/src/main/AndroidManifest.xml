@@ -270,7 +270,6 @@
             android:name=".activity.SignActivity"
             android:label="@string/title_activity_field_sign" />
         <activity android:name=".activity.LoginActivity" />
-        <activity android:name=".activity.JLHomeActivity" />
         <activity android:name=".activity.ClauseActivity"></activity>
     </application>
 

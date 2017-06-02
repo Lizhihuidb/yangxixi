@@ -23,6 +23,7 @@ import com.tjl.yangxixi.OriginalFragment;
 import com.tjl.yangxixi.R;
 import com.tjl.yangxixi.activity.DetailsClueActivity;
 import com.tjl.yangxixi.activity.MainActivity;
+import com.tjl.yangxixi.activity.SingeDetailsActivity;
 import com.tjl.yangxixi.api.YangxixiApi;
 
 import java.io.IOException;
@@ -73,7 +74,7 @@ public class SingeFragment extends OriginalFragment{
 		mLinearLayoutManager = new LinearLayoutManager(getActivity());
 		mRecyclerView.setLayoutManager(mLinearLayoutManager);
 		bean = ((MainActivity)getActivity()).dataBean;
-		LogUtils.i("tag",bean.getC_id());
+//		LogUtils.i("tag",bean.getC_id());
 		try {
 			//检测
 		if (bean.getServer_select().equals("第三方检测服务")){
@@ -83,7 +84,10 @@ public class SingeFragment extends OriginalFragment{
 			mSingeAdapter.setOnItemClickListener(new SingeAdapter.MyItemClickListener() {
 				@Override
 				public void onItemClick(View v, int position) {
-					Intent intent = new Intent(getActivity(),DetailsClueActivity.class);
+					Intent intent = new Intent(getActivity(),SingeDetailsActivity.class);
+					Bundle bundle = new Bundle();
+					bundle.putSerializable("databean",mList.get(0));
+					intent.putExtras(bundle);
 					startActivity(intent);
 				}
 			});
@@ -96,8 +100,12 @@ public class SingeFragment extends OriginalFragment{
 			mSingeCarAdapter.setOnItemClickListener(new SingeCarAdapter.MyItemClickListener() {
 				@Override
 				public void onItemClick(View v, int position) {
-					Intent intent = new Intent(getActivity(),DetailsClueActivity.class);
-					startActivity(intent);
+					Intent intentcar = new Intent(getActivity(),SingeDetailsActivity.class);
+					Bundle bundle = new Bundle();
+					bundle.putSerializable("databean",mCarList.get(0));
+					LogUtils.i("tag",mCarList.get(0).getO_id());
+					intentcar.putExtras(bundle);
+					startActivity(intentcar);
 				}
 			});
 			}
@@ -109,8 +117,11 @@ public class SingeFragment extends OriginalFragment{
 			mSingIndoorAdapter.setOnItemClickListener(new SingeIndoorAdapter.MyItemClickListener() {
 				@Override
 				public void onItemClick(View v, int position) {
-					Intent intent = new Intent(getActivity(),DetailsClueActivity.class);
-					startActivity(intent);
+					Intent intentindoor = new Intent(getActivity(),SingeDetailsActivity.class);
+					Bundle bundle = new Bundle();
+					bundle.putSerializable("databean",mIndoorList.get(0));
+					intentindoor.putExtras(bundle);
+					startActivity(intentindoor);
 				}
 			});
 			}
