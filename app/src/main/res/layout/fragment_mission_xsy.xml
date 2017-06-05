@@ -5,8 +5,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
 	android:layout_width="match_parent"
 	android:layout_height="wrap_content"
-	android:id="@+id/aabbbbbbb"
-	 >	
+	 >
  <com.lyp.percent.PercentRelativeLayout 
      android:id="@+id/percent_missionmytitle"
      android:layout_width="0dp"
@@ -21,6 +20,7 @@
 		android:layout_centerHorizontal="true"
 		android:gravity="center"
     	 >
+
 		<TextView
 		    android:layout_width="match_parent"
 		    android:layout_height="match_parent"
@@ -78,10 +78,10 @@
 	    android:gravity="center"
 	    >	
 		<TextView
-		    android:id="@+id/tv_no_myallot"
+		    android:id="@+id/tv_mytoday"
 		    android:layout_width="wrap_content"
 		    android:layout_height="wrap_content"
-		    android:text="未分配"
+		    android:text="今日任务"
 		    android:textColor="@color/white"
 		    android:textSize="14sp"
 		    android:gravity="center"
@@ -94,7 +94,7 @@
 	    android:gravity="center"
 	    >	
 		<TextView
-		    android:id="@+id/tv_then_myorder"
+		    android:id="@+id/tv_myyes"
 		    android:layout_width="wrap_content"
 		    android:layout_height="wrap_content"
 		    android:text="已预约"
@@ -110,7 +110,7 @@
 	    android:gravity="center"
 	    >	
 		<TextView
-		    android:id="@+id/tv_no_myorder"
+		    android:id="@+id/tv_myno"
 		    android:layout_width="wrap_content"
 		    android:layout_height="wrap_content"
 		    android:text="未预约"

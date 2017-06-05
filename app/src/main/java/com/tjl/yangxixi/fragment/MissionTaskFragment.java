@@ -15,10 +15,10 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.lyp.yangxixi.missionmanagerfragment.AllMissionFragment;
-import com.lyp.yangxixi.missionmanagerfragment.NoAllotMissionFragment;
-import com.lyp.yangxixi.missionmanagerfragment.NoOrderMissionFragment;
-import com.lyp.yangxixi.missionmanagerfragment.YesOrderMissionFragment;
+import com.lyp.yangxixi.missionfragment.AllMissionFragments;
+import com.lyp.yangxixi.missionfragment.NoYuYueFragment;
+import com.lyp.yangxixi.missionfragment.ToDayMissionFragment;
+import com.lyp.yangxixi.missionfragment.YesYuYueFragment;
 import com.tjl.yangxixi.OriginalFragment;
 import com.tjl.yangxixi.R;
 import com.tjl.yangxixi.activity.OrderListActivity;
@@ -33,10 +33,10 @@ public class MissionTaskFragment extends OriginalFragment implements OnClickList
 
 	View v;
 	private List<Fragment> fragments;//fragment的集合
-	private AllMissionFragment mAllMissionFragment;//所有任务
-	private NoAllotMissionFragment noAllotMissionFragment;//未分配
-	private YesOrderMissionFragment yesOrderMissionFragment;//已预约
-	private NoOrderMissionFragment noOrderMissionFragment;//未预约
+	private AllMissionFragments mAllMissionFragment;//所有任务
+	private ToDayMissionFragment toDayMissionFragment;//今日任务
+	private YesYuYueFragment mYesYuYueFragment;//已预约
+	private NoYuYueFragment mNoYuYueFragment;//未预约
 	private TextView mAllmission,mNoallot,mThenorder,mNoorder;
 	private ViewPager viewPager;
 	private FragmentPagerAdapter mAdapter;
@@ -47,28 +47,26 @@ public class MissionTaskFragment extends OriginalFragment implements OnClickList
 						   Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		v= inflater.inflate(R.layout.fragment_mission_xsy, null,true);
-
 		init();
 		viewPager.setCurrentItem(0);
-
 		return v;
 	}
 
 
 	private void init(){
 		fragments = new ArrayList<Fragment>();
-		mAllMissionFragment = new AllMissionFragment();
-		noAllotMissionFragment = new NoAllotMissionFragment();
-		yesOrderMissionFragment = new YesOrderMissionFragment();
-		noOrderMissionFragment = new NoOrderMissionFragment();
+		mAllMissionFragment = new AllMissionFragments();
+		toDayMissionFragment = new ToDayMissionFragment();
+		mYesYuYueFragment = new YesYuYueFragment();
+		mNoYuYueFragment = new NoYuYueFragment();
 		fragments.add(mAllMissionFragment);
-		fragments.add(noAllotMissionFragment);
-		fragments.add(yesOrderMissionFragment);
-		fragments.add(noOrderMissionFragment);
+		fragments.add(toDayMissionFragment);
+		fragments.add(mYesYuYueFragment);
+		fragments.add(mNoYuYueFragment);
 		mAllmission = (TextView) v.findViewById(R.id.tv_myallmission);
-		mNoallot = (TextView) v.findViewById(R.id.tv_no_myallot);
-		mThenorder = (TextView) v.findViewById(R.id.tv_then_myorder);
-		mNoorder = (TextView) v.findViewById(R.id.tv_no_myorder);
+		mNoallot = (TextView) v.findViewById(R.id.tv_mytoday);
+		mThenorder = (TextView) v.findViewById(R.id.tv_myyes);
+		mNoorder = (TextView) v.findViewById(R.id.tv_myno);
 		viewPager=(ViewPager) v.findViewById(R.id.myviewpager);
 		mMybutton = (ImageView) v.findViewById(R.id.iv_mybutton);
 		mAllmission.setOnClickListener(this);
@@ -150,13 +148,13 @@ public class MissionTaskFragment extends OriginalFragment implements OnClickList
 			case R.id.tv_myallmission:
 				viewPager.setCurrentItem(0);
 				break;
-			case R.id.tv_no_myallot:
+			case R.id.tv_mytoday:
 				viewPager.setCurrentItem(1);
 				break;
-			case R.id.tv_then_myorder:
+			case R.id.tv_myyes:
 				viewPager.setCurrentItem(2);
 				break;
-			case R.id.tv_no_myorder:
+			case R.id.tv_myno:
 				viewPager.setCurrentItem(3);
 				break;
 			case R.id.iv_mybutton:

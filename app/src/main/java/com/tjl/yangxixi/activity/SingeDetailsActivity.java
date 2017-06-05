@@ -53,7 +53,6 @@ public class SingeDetailsActivity extends Activity{
 		mRecyclerView.setLayoutManager(mLinearLayoutManager);
 		mAdapter = new CarDetailsAdapter(mList);
 		mRecyclerView.setAdapter(mAdapter);
-
 		try {
 			Cardetail(carBean.getO_id());
 		} catch (IOException e) {

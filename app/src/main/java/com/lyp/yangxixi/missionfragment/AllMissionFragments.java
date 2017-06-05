@@ -1,23 +1,24 @@
-package com.lyp.yangxixi.missionmanagerfragment;
+package com.lyp.yangxixi.missionfragment;
 
-import com.lyp.jsonbean.LoginBean;
-import com.tjl.yangxixi.OriginalFragment;
-import com.tjl.yangxixi.R;
-import com.tjl.yangxixi.activity.AssignmentdetailsCarActivity;
-import com.tjl.yangxixi.activity.MainActivity;
-import com.lyp.adapters.AlltaskAdapter;
-import com.tjl.yangxixi.api.YangxixiApi;
-import com.lyp.jsonbean.AllTaskBean;
-
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.lyp.adapters.AlltaskAdapter;
+import com.lyp.adapters.MAlltaskAdapter;
+import com.lyp.jsonbean.AllTaskBean;
+import com.lyp.jsonbean.LoginBean;
+import com.lyp.jsonbean.MAllTaskBean;
+import com.tjl.yangxixi.OriginalFragment;
+import com.tjl.yangxixi.R;
+import com.tjl.yangxixi.activity.MainActivity;
+import com.tjl.yangxixi.api.YangxixiApi;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -28,13 +29,14 @@ import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
-//所有任务
-public class AllMissionFragment extends OriginalFragment{
+
+//(我的任务)所有任务
+public class AllMissionFragments extends OriginalFragment{
 	View v;
 	private RecyclerView mRecyclerView;
-	private AlltaskAdapter mAdapter;
-	private GridLayoutManager mGridLayoutManager;
-	private List<AllTaskBean.DataBean> mList = new ArrayList<>();
+	private MAlltaskAdapter mAdapter;
+	private LinearLayoutManager mLayoutManager;
+	private List<MAllTaskBean.DataBean> mList = new ArrayList<>();
 	private LoginBean.DataBean bean;
 	private TextView mCounts;
 	//定义一个页码为1
@@ -51,12 +53,12 @@ public class AllMissionFragment extends OriginalFragment{
 	public void init(){
 		mCounts = (TextView) v.findViewById(R.id.tv_counts);
 		mRecyclerView = (RecyclerView) v.findViewById(R.id.grid_recycler);
-		mGridLayoutManager = new GridLayoutManager(getActivity(), 2);
-		mRecyclerView.setLayoutManager(mGridLayoutManager);
-		mAdapter = new AlltaskAdapter(mList);
+		mLayoutManager = new LinearLayoutManager(getActivity());
+		mRecyclerView.setLayoutManager(mLayoutManager);
+		mAdapter = new MAlltaskAdapter(mList);
 		// 实例化 RecyclerView Adapter
 		mRecyclerView.setAdapter(mAdapter);
-		mAdapter.setOnItemClickListener(new AlltaskAdapter.MyItemClickListener() {
+		mAdapter.setOnItemClickListener(new MAlltaskAdapter.MyItemClickListener() {
 			@Override
 			public void onItemClick(View v, int position) {
 //				Intent intentcar = new Intent(getActivity(),AssignmentdetailsCarActivity.class);
@@ -69,7 +71,7 @@ public class AllMissionFragment extends OriginalFragment{
 		});
 		bean = ((MainActivity)getActivity()).dataBean;
 		try {
-			Task(bean.getC_id(),bean.getServer_select(),pages);
+			Task(bean.getC_id(),pages);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -80,32 +82,32 @@ public class AllMissionFragment extends OriginalFragment{
 		// TODO Auto-generated method stub
 	}
 
-	public void Task(String c_id,String server_select,int page) throws IOException {
+	public void Task(String c_id,int page) throws IOException {
 		Retrofit retrofit = new Retrofit.Builder()
 				.baseUrl(YangxixiApi.APP_URL)
 				.addConverterFactory(GsonConverterFactory.create())
 				.build();
 		YangxixiApi github = retrofit.create(YangxixiApi.class);
-		Call<AllTaskBean> call = github.getAllTask(c_id, server_select,page);
-		call.enqueue(new Callback<AllTaskBean>() {
+		Call<MAllTaskBean> call = github.getMAlltask(c_id,page);
+		call.enqueue(new Callback<MAllTaskBean>() {
 			@Override
-			public void onResponse(Call<AllTaskBean> call, final Response<AllTaskBean> response) {
-                if (response.body().getResult()== 1 ) {
-					mCounts.setText(response.body().getCounts());
-                    getActivity().runOnUiThread(new Runnable() {
-                        @Override
-                        public void run() {
-                            mList.addAll(response.body().getData());
-                            mAdapter.notifyDataSetChanged();
-                        }
-                    });
-                }else {
-                    Toast.makeText(getActivity(),response.message(),Toast.LENGTH_SHORT).show();
-                }
+			public void onResponse(Call<MAllTaskBean> call, final Response<MAllTaskBean> response) {
+				if (response.body().getResult()== 1 ) {
+					mCounts.setText(response.body().getCount());
+					getActivity().runOnUiThread(new Runnable() {
+						@Override
+						public void run() {
+							mList.addAll(response.body().getData());
+							mAdapter.notifyDataSetChanged();
+						}
+					});
+				}else {
+					Toast.makeText(getActivity(),response.message(),Toast.LENGTH_SHORT).show();
+				}
 			}
 			@Override
-			public void onFailure(Call<AllTaskBean> call, Throwable t) {
-                Toast.makeText(getActivity(),t.getMessage(),Toast.LENGTH_SHORT).show();
+			public void onFailure(Call<MAllTaskBean> call, Throwable t) {
+				Toast.makeText(getActivity(),t.getMessage(),Toast.LENGTH_SHORT).show();
 			}
 		});
 	}

@@ -88,7 +88,7 @@ public class SingeFragment extends OriginalFragment{
 				public void onItemClick(View v, int position) {
 					Intent intent = new Intent(getActivity(),SingeDetectionActivity.class);
 					Bundle bundle = new Bundle();
-					bundle.putSerializable("databean",mList.get(0));
+					bundle.putSerializable("databean",mList.get(position));
 					intent.putExtras(bundle);
 					startActivity(intent);
 				}
@@ -104,8 +104,7 @@ public class SingeFragment extends OriginalFragment{
 				public void onItemClick(View v, int position) {
 					Intent intentcar = new Intent(getActivity(),SingeDetailsActivity.class);
 					Bundle bundle = new Bundle();
-					bundle.putSerializable("databean",mCarList.get(0));
-					LogUtils.i("tag",mCarList.get(0).getO_id());
+					bundle.putSerializable("databean",mCarList.get(position));
 					intentcar.putExtras(bundle);
 					startActivity(intentcar);
 				}
@@ -121,7 +120,7 @@ public class SingeFragment extends OriginalFragment{
 				public void onItemClick(View v, int position) {
 					Intent intentindoor = new Intent(getActivity(),SingeIndoorActivity.class);
 					Bundle bundle = new Bundle();
-					bundle.putSerializable("databean",mIndoorList.get(0));
+					bundle.putSerializable("databean",mIndoorList.get(position));
 					intentindoor.putExtras(bundle);
 					startActivity(intentindoor);
 				}
