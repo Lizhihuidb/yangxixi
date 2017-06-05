@@ -3,13 +3,11 @@ package com.lyp.yangxixi.missionmanagerfragment;
 import com.lyp.jsonbean.LoginBean;
 import com.tjl.yangxixi.OriginalFragment;
 import com.tjl.yangxixi.R;
-import com.tjl.yangxixi.activity.DetailsClueActivity;
 import com.tjl.yangxixi.activity.MainActivity;
 import com.lyp.adapters.AlltaskAdapter;
 import com.tjl.yangxixi.api.YangxixiApi;
 import com.lyp.jsonbean.AllTaskBean;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -59,12 +57,15 @@ public class AllMissionFragment extends OriginalFragment{
 		mAdapter.setOnItemClickListener(new AlltaskAdapter.MyItemClickListener() {
 			@Override
 			public void onItemClick(View v, int position) {
-				Intent intent = new Intent(getActivity(),DetailsClueActivity.class);
-				startActivity(intent);
+//				Intent intentcar = new Intent(getActivity(),SingeDetectionActivity.class);
+////				Bundle bundle = new Bundle();
+////				bundle.putSerializable("databean",mList.get(0));
+////				intentcar.putExtras(bundle);
+//				startActivity(intentcar);
+				Toast.makeText(getActivity(),"sdsd",Toast.LENGTH_SHORT).show();
 			}
 		});
 		bean = ((MainActivity)getActivity()).dataBean;
-
 		try {
 			Task(bean.getC_id(),bean.getServer_select(),pages);
 		} catch (IOException e) {

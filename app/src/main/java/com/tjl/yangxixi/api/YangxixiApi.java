@@ -1,6 +1,7 @@
 package com.tjl.yangxixi.api;
 
 import com.lyp.jsonbean.AllTaskBean;
+import com.lyp.jsonbean.AssignCarBean;
 import com.lyp.jsonbean.CarOrdersDetailsBean;
 import com.lyp.jsonbean.DetectionDetailsBean;
 import com.lyp.jsonbean.IndoorDetailsBean;
@@ -100,5 +101,11 @@ public interface YangxixiApi {
             @Query("c_id") String c_id,
             @Query("server_select") String server_select,
             @Query("page") int page);
+
+    //分配任务(车内)详情
+    @GET("app/staff_orderDetails ")
+    Call<AssignCarBean> getAssignCar(
+            @Query("o_id") String o_id);
+
 
 }
