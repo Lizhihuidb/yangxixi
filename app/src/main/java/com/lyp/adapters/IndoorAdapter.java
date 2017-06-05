@@ -9,6 +9,7 @@ import android.widget.TextView;
 
 import com.lyp.jsonbean.CarOrdersDetailsBean;
 import com.lyp.jsonbean.DetectionDetailsBean;
+import com.lyp.jsonbean.IndoorDetailsBean;
 import com.tjl.yangxixi.R;
 
 import java.util.List;
@@ -16,45 +17,46 @@ import java.util.List;
 /**
  * 作者:ChenXi 时间:2017/6/2 13: 37
  */
-//抢单详情(检测)
-public class DetectionDetailsAdapter extends RecyclerView.Adapter<DetectionDetailsAdapter.MyViewHolder>{
+//抢单详情(室内)
+public class IndoorAdapter extends RecyclerView.Adapter<IndoorAdapter.MyViewHolder>{
 
-    private List<DetectionDetailsBean.DataBean> mList;
+    private List<IndoorDetailsBean.DataBean> mList;
 
-    public DetectionDetailsAdapter(List<DetectionDetailsBean.DataBean> list) {
+    public IndoorAdapter(List<IndoorDetailsBean.DataBean> list) {
         mList = list;
     }
 
     @Override
-    public MyViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
-        DetectionDetailsAdapter.MyViewHolder holder = new DetectionDetailsAdapter.MyViewHolder(LayoutInflater.from
+    public IndoorAdapter.MyViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
+        IndoorAdapter.MyViewHolder holder = new IndoorAdapter.MyViewHolder(LayoutInflater.from
                 (viewGroup.getContext()).inflate(R.layout.activity_singe_details, viewGroup, false));
         return holder;
     }
 
+
     @Override
-    public void onBindViewHolder(MyViewHolder myViewHolder, int i) {
+    public void onBindViewHolder(IndoorAdapter.MyViewHolder myViewHolder, int i) {
         myViewHolder.mNmae.setText(mList.get(i).getUser_name());
         myViewHolder.mPhone.setText(mList.get(i).getU_phone());
         myViewHolder.mAddress.setText(mList.get(i).getU_addres());
-        myViewHolder.mSelection.setText(mList.get(i).getPoint_position());
-        myViewHolder.mAssaytype.setText(mList.get(i).getBit_type());
+        myViewHolder.mLocation.setText(mList.get(i).getPoint_position());
         myViewHolder.mLsarea.setText(mList.get(i).getCovered_area());
         myViewHolder.mTime.setText(mList.get(i).getPay_time());
         myViewHolder.mOrderNumber.setText(mList.get(i).getOrder_number());
 
         myViewHolder.mCar.setVisibility(View.GONE);
         myViewHolder.mCarbrand.setVisibility(View.GONE);
-        myViewHolder.mAgeType.setVisibility(View.GONE);
+        myViewHolder.mCarAge.setVisibility(View.GONE);
         myViewHolder.mCarLsnumber.setVisibility(View.GONE);
-
-        myViewHolder.mAreas.setVisibility(View.VISIBLE);
+        myViewHolder.mArea.setVisibility(View.VISIBLE);
+        myViewHolder.mLocations.setVisibility(View.VISIBLE);
         myViewHolder.mAddresss.setVisibility(View.VISIBLE);
-        myViewHolder.mSelections.setVisibility(View.VISIBLE);
-        myViewHolder.mAssaytypes.setVisibility(View.VISIBLE);
+        myViewHolder.mAgeType.setVisibility(View.GONE);
+        myViewHolder.mNumberType.setVisibility(View.GONE);
 
         myViewHolder.mViewArea.setVisibility(View.VISIBLE);
         myViewHolder.mViewAge.setVisibility(View.GONE);
+        myViewHolder.mViewBrand.setVisibility(View.GONE);
     }
 
     @Override
@@ -63,35 +65,33 @@ public class DetectionDetailsAdapter extends RecyclerView.Adapter<DetectionDetai
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
-        TextView mNmae,mPhone,mAddress,mSelection,mAssaytype,mLsarea,mTime,mOrderNumber;
-        LinearLayout mCar,mCarbrand,mAgeType,mCarLsnumber;
-        LinearLayout mAreas,mAddresss,mSelections,mAssaytypes;
-        TextView mViewArea,mViewAge;
+        TextView mNmae,mPhone,mAddress,mLocation,mLsarea,mTime,mOrderNumber;
+        LinearLayout mCar,mCarbrand,mCarAge,mCarLsnumber;
+        LinearLayout mArea,mLocations,mAddresss,mAgeType,mNumberType;
+        TextView mViewArea,mViewBrand,mViewAge;
 
         public MyViewHolder(View view) {
             super(view);
             mNmae = (TextView) view.findViewById(R.id.tv_cardetailsname);
             mPhone = (TextView) view.findViewById(R.id.tv_singedatailsphone);
             mAddress = (TextView) view.findViewById(R.id.tv_detailsaddress);
-            mSelection = (TextView) view.findViewById(R.id.tv_selection);
-            mAssaytype = (TextView) view.findViewById(R.id.tv_detailsassaytype);
+            mLocation = (TextView) view.findViewById(R.id.tv_detailslocation);
             mLsarea= (TextView) view.findViewById(R.id.tv_detailsarea);
             mTime = (TextView) view.findViewById(R.id.tv_cardetailstime);
             mOrderNumber = (TextView) view.findViewById(R.id.tv_cardetailsordernumber);
-
-
             mCar = (LinearLayout) view.findViewById(R.id.ll_car);
             mCarbrand = (LinearLayout) view.findViewById(R.id.ll_carbrand);
-            mAgeType = (LinearLayout) view.findViewById(R.id.ll_age_type);
+            mCarAge = (LinearLayout) view.findViewById(R.id.ll_carage);
             mCarLsnumber = (LinearLayout) view.findViewById(R.id.ll_carlsnumber);
-
-            mAreas = (LinearLayout) view.findViewById(R.id.ll_area);
+            mArea = (LinearLayout) view.findViewById(R.id.ll_area);
+            mLocations = (LinearLayout) view.findViewById(R.id.ll_locations);
             mAddresss = (LinearLayout) view.findViewById(R.id.ll_address);
-            mSelections = (LinearLayout) view.findViewById(R.id.ll_selection);
-            mAssaytypes = (LinearLayout) view.findViewById(R.id.ll_assaytype);
 
+            mAgeType = (LinearLayout) view.findViewById(R.id.ll_age_type);
+            mNumberType = (LinearLayout) view.findViewById(R.id.ll_number_type);
             //View
             mViewArea = (TextView) view.findViewById(R.id.view_area);
+            mViewBrand = (TextView) view.findViewById(R.id.view_carbrand);
             mViewAge = (TextView) view.findViewById(R.id.view_age);
         }
     }

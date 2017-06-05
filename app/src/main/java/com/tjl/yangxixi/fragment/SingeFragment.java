@@ -24,6 +24,8 @@ import com.tjl.yangxixi.R;
 import com.tjl.yangxixi.activity.DetailsClueActivity;
 import com.tjl.yangxixi.activity.MainActivity;
 import com.tjl.yangxixi.activity.SingeDetailsActivity;
+import com.tjl.yangxixi.activity.SingeDetectionActivity;
+import com.tjl.yangxixi.activity.SingeIndoorActivity;
 import com.tjl.yangxixi.api.YangxixiApi;
 
 import java.io.IOException;
@@ -84,7 +86,7 @@ public class SingeFragment extends OriginalFragment{
 			mSingeAdapter.setOnItemClickListener(new SingeAdapter.MyItemClickListener() {
 				@Override
 				public void onItemClick(View v, int position) {
-					Intent intent = new Intent(getActivity(),SingeDetailsActivity.class);
+					Intent intent = new Intent(getActivity(),SingeDetectionActivity.class);
 					Bundle bundle = new Bundle();
 					bundle.putSerializable("databean",mList.get(0));
 					intent.putExtras(bundle);
@@ -117,7 +119,7 @@ public class SingeFragment extends OriginalFragment{
 			mSingIndoorAdapter.setOnItemClickListener(new SingeIndoorAdapter.MyItemClickListener() {
 				@Override
 				public void onItemClick(View v, int position) {
-					Intent intentindoor = new Intent(getActivity(),SingeDetailsActivity.class);
+					Intent intentindoor = new Intent(getActivity(),SingeIndoorActivity.class);
 					Bundle bundle = new Bundle();
 					bundle.putSerializable("databean",mIndoorList.get(0));
 					intentindoor.putExtras(bundle);

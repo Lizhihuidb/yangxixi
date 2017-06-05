@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * 作者:ChenXi 时间:2017/6/1 17: 32
  */
-
+//室内
 public class JLSingeIndoorBean implements Serializable{
 
 

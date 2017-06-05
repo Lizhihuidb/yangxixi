@@ -19,8 +19,8 @@ import android.widget.Toast;
 
 import com.lyp.yangxixi.missionmanagerfragment.AllMissionFragment;
 import com.lyp.yangxixi.missionmanagerfragment.NoAllotMissionFragment;
+import com.lyp.yangxixi.missionmanagerfragment.YesOrderMissionFragment;
 import com.lyp.yangxixi.missionmanagerfragment.NoOrderMissionFragment;
-import com.lyp.yangxixi.missionmanagerfragment.ThenOrderMissionFragment;
 import com.tjl.yangxixi.OriginalFragment;
 import com.tjl.yangxixi.R;
 
@@ -35,7 +35,7 @@ public class MissionManagerFragment extends OriginalFragment implements OnClickL
 	private List<Fragment> fragments;//fragment的集合
 	private AllMissionFragment mAllMissionFragment;//所有任务
 	private NoAllotMissionFragment noAllotMissionFragment;//未分配
-	private ThenOrderMissionFragment thenOrderMissionFragment;//已预约
+	private YesOrderMissionFragment yesOrderMissionFragment;//已预约
 	private NoOrderMissionFragment noOrderMissionFragment;//未预约
 	private TextView mAllmission,mNoallot,mThenorder,mNoorder;
 	private ViewPager viewPager;
@@ -62,11 +62,11 @@ public class MissionManagerFragment extends OriginalFragment implements OnClickL
 		fragments = new ArrayList<Fragment>();
 		mAllMissionFragment = new AllMissionFragment();
 		noAllotMissionFragment = new NoAllotMissionFragment();
-		thenOrderMissionFragment = new ThenOrderMissionFragment();
+		yesOrderMissionFragment = new YesOrderMissionFragment();
 		noOrderMissionFragment = new NoOrderMissionFragment();
 		fragments.add(mAllMissionFragment);
 		fragments.add(noAllotMissionFragment);
-		fragments.add(thenOrderMissionFragment);
+		fragments.add(yesOrderMissionFragment);
 		fragments.add(noOrderMissionFragment);
 		mAllmission = (TextView) v.findViewById(R.id.tv_allmission);
 		mNoallot = (TextView) v.findViewById(R.id.tv_no_allot);

@@ -13,17 +13,15 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.lyp.yangxixi.missionmanagerfragment.AllMissionFragment;
 import com.lyp.yangxixi.missionmanagerfragment.NoAllotMissionFragment;
 import com.lyp.yangxixi.missionmanagerfragment.NoOrderMissionFragment;
-import com.lyp.yangxixi.missionmanagerfragment.ThenOrderMissionFragment;
+import com.lyp.yangxixi.missionmanagerfragment.YesOrderMissionFragment;
 import com.tjl.yangxixi.OriginalFragment;
 import com.tjl.yangxixi.R;
 import com.tjl.yangxixi.activity.OrderListActivity;
-import com.tjl.yangxixi.activity.OrderQueryActivity;
 
 /**
  *
@@ -37,7 +35,7 @@ public class MissionTaskFragment extends OriginalFragment implements OnClickList
 	private List<Fragment> fragments;//fragment的集合
 	private AllMissionFragment mAllMissionFragment;//所有任务
 	private NoAllotMissionFragment noAllotMissionFragment;//未分配
-	private ThenOrderMissionFragment thenOrderMissionFragment;//已预约
+	private YesOrderMissionFragment yesOrderMissionFragment;//已预约
 	private NoOrderMissionFragment noOrderMissionFragment;//未预约
 	private TextView mAllmission,mNoallot,mThenorder,mNoorder;
 	private ViewPager viewPager;
@@ -61,11 +59,11 @@ public class MissionTaskFragment extends OriginalFragment implements OnClickList
 		fragments = new ArrayList<Fragment>();
 		mAllMissionFragment = new AllMissionFragment();
 		noAllotMissionFragment = new NoAllotMissionFragment();
-		thenOrderMissionFragment = new ThenOrderMissionFragment();
+		yesOrderMissionFragment = new YesOrderMissionFragment();
 		noOrderMissionFragment = new NoOrderMissionFragment();
 		fragments.add(mAllMissionFragment);
 		fragments.add(noAllotMissionFragment);
-		fragments.add(thenOrderMissionFragment);
+		fragments.add(yesOrderMissionFragment);
 		fragments.add(noOrderMissionFragment);
 		mAllmission = (TextView) v.findViewById(R.id.tv_myallmission);
 		mNoallot = (TextView) v.findViewById(R.id.tv_no_myallot);
