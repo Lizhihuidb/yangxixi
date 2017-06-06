@@ -15,7 +15,7 @@ import java.util.List;
 /**
  * Created by Administrator on 2017/5/24.
  */
-
+//所有任务
 public class AlltaskAdapter extends RecyclerView.Adapter<AlltaskAdapter.MyViewHolder>{
     private List<AllTaskBean.DataBean> mList;
     private MyItemClickListener mListener;
@@ -25,7 +25,8 @@ public class AlltaskAdapter extends RecyclerView.Adapter<AlltaskAdapter.MyViewHo
 
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
-        MyViewHolder holder = new MyViewHolder(LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.testtask, viewGroup,
+        MyViewHolder holder = new MyViewHolder(LayoutInflater.from(
+                viewGroup.getContext()).inflate(R.layout.testtask, viewGroup,
                 false));
         return holder;
     }

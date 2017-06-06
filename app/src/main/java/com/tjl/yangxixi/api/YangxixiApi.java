@@ -33,15 +33,15 @@ import retrofit2.http.Query;
 
 public interface YangxixiApi {
 
-     public String APP_URL = "http://192.168.1.41/api/index.php/api/";
+//     public String APP_URL = "http://192.168.1.41/api/index.php/api/";
 
-//        public String APP_URL = "http://xqq.0102003.com/api/";
+        public String APP_URL = "http://xqq.0102003.com/api/";
 
 
     //登录
      @FormUrlEncoded
-    @POST("app/login")
-//    @POST("api.php")
+//    @POST("app/login")
+    @POST("api.php")
      Call<LoginBean> getLogin(
              @Field("userName") String userName,
              @Field("userPwd") String userPwd);
@@ -54,8 +54,8 @@ public interface YangxixiApi {
             @Query("c_id") String c_id);
 
     //车内
-    @GET("app/robOrder")
-//    @GET("jiedancar.php")
+//    @GET("app/robOrder")
+    @GET("jiedancar.php")
     Call<JLCarBean> getSingCar(
             @Query("c_id") String c_id,
             @Query("server_select") String server_select,
@@ -69,8 +69,8 @@ public interface YangxixiApi {
             @Query("c_id") String c_id);
 
     //接单详情(车内)
-    @GET("app/orderDetails")
-//    @GET("carxq.php")
+//    @GET("app/orderDetails")
+    @GET("carxq.php")
     Call<CarOrdersDetailsBean> getCarOrders(
             @Query("o_id") String o_id);
 
@@ -85,32 +85,32 @@ public interface YangxixiApi {
             @Query("o_id") String o_id);
 
     //所有任务
-    @GET("app/allMission")
-//    @GET("alltask.php")
+//    @GET("app/allMission")
+    @GET("alltask.php")
     Call<AllTaskBean> getAllTask(
             @Query("c_id") String c_id,
             @Query("server_select") String server_select,
             @Query("page") int page);
 
     //未分配
-    @GET("app/undistributed")
-//    @GET("nofenpei.php")
+//    @GET("app/undistributed")
+    @GET("nofenpei.php")
     Call<NofenpeiBean> getNoTask(
             @Query("c_id") String c_id,
             @Query("server_select") String server_select,
             @Query("page") int page);
 
     //已预约
-    @GET("app/subscriber")
-//    @GET("yiyuyue.php")
+//    @GET("app/subscriber")
+    @GET("yiyuyue.php")
     Call<YesOrderBean> getYesOrder(
             @Query("c_id") String c_id,
             @Query("server_select") String server_select,
             @Query("page") int page);
 
     //未预约
-    @GET("app/unsubscriber")
-//    @GET("noyuyue.php")
+//    @GET("app/unsubscriber")
+    @GET("noyuyue.php")
     Call<NoOrderBean> getNoOrder(
             @Query("c_id") String c_id,
             @Query("server_select") String server_select,

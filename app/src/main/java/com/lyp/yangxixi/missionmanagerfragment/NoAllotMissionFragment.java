@@ -1,14 +1,5 @@
 package com.lyp.yangxixi.missionmanagerfragment;
 
-import com.lyp.adapters.NofenpeiAdapter;
-import com.lyp.jsonbean.LoginBean;
-import com.lyp.jsonbean.NofenpeiBean;
-import com.tjl.yangxixi.OriginalFragment;
-import com.tjl.yangxixi.R;
-import com.tjl.yangxixi.activity.IndependentActivity;
-import com.tjl.yangxixi.activity.MainActivity;
-import com.tjl.yangxixi.api.YangxixiApi;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
@@ -22,12 +13,18 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.lyp.adapters.NofenpeiAdapter;
+import com.lyp.jsonbean.LoginBean;
+import com.lyp.jsonbean.NofenpeiBean;
+import com.tjl.yangxixi.OriginalFragment;
+import com.tjl.yangxixi.R;
+import com.tjl.yangxixi.activity.IndependentActivity;
+import com.tjl.yangxixi.activity.MainActivity;
+import com.tjl.yangxixi.api.YangxixiApi;
+
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Map;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -62,7 +59,6 @@ public class NoAllotMissionFragment extends OriginalFragment implements View.OnC
 	@Override
 	protected void lazyLoad() {
 		// TODO Auto-generated method stub
-
 	}
 
 	public void init(){
