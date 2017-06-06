@@ -272,6 +272,7 @@
         <activity android:name=".activity.ClauseActivity" />
         <activity android:name=".activity.SingeDetectionActivity" />
         <activity android:name=".activity.SingeIndoorActivity" />
+        <activity android:name=".activity.IndependentActivity"></activity>
     </application>
 
 </manifest>

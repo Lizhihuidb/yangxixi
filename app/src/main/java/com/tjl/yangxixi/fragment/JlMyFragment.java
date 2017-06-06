@@ -24,11 +24,9 @@ import com.tjl.yangxixi.activity.ProceduresActivity;
  */
 public class JlMyFragment extends OriginalFragment implements OnClickListener{
 
-
 	View v;
 	private RelativeLayout mServiceManual,mUseClauses,mFeedback,mAbout,mVersion;
 	private LinearLayout mMessage;
-
 
 	@Override
 	protected void lazyLoad() {

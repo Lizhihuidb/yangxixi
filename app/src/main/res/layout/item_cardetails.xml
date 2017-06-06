@@ -54,6 +54,14 @@
             android:gravity="center"
             android:textSize="18sp"
             />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="(居家服务)"
+            android:gravity="center"
+            android:layout_toRightOf="@id/tv_server_type"
+            android:textSize="18sp"
+            />
     </LinearLayout>
     <View
         android:id="@+id/view_details"

@@ -57,4 +57,6 @@ public class PersonageMessageActivity extends Activity implements OnClickListene
 		}
 	}
 
+
+
 }

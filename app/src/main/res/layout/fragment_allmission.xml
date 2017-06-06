@@ -38,9 +38,61 @@
 		android:textSize="18sp"
 		/>
 	</LinearLayout>
+	<RelativeLayout
+		android:layout_width="match_parent"
+		android:layout_height="match_parent">
 		<android.support.v7.widget.RecyclerView
 			android:id="@+id/grid_recycler"
 			android:layout_width="match_parent"
 			android:layout_height="match_parent"
 			/>
+	<LinearLayout
+		android:id="@+id/ll_quanxuan"
+		android:layout_width="match_parent"
+		android:layout_height="50dp"
+		android:orientation="horizontal"
+		android:layout_alignParentBottom="true"
+		android:background="@color/white"
+		android:visibility="gone"
+		>
+		<CheckBox
+			android:id="@+id/cb_missionall"
+			android:layout_width="28dp"
+			android:layout_height="28dp"
+			android:layout_gravity="center"
+			android:background="@drawable/checkbox_large"
+			android:button="@null"
+			android:layout_marginLeft="10dp"
+			android:gravity="center"
+			/>
+		<TextView
+			android:id="@+id/tv_missionall"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="全选"
+			android:layout_gravity="center"
+			android:layout_marginLeft="10dp"
+			/>
+		<Button
+			android:id="@+id/btn_pf"
+			android:layout_width="70dp"
+			android:layout_height="30dp"
+			android:text="平均分配"
+			android:layout_marginLeft="10dp"
+			android:background="@color/tab_wtg"
+			android:layout_gravity="center"
+			android:textColor="@color/white"
+			/>
+		<Button
+			android:id="@+id/btn_zf"
+			android:layout_width="70dp"
+			android:layout_height="30dp"
+			android:text="自主分配"
+			android:layout_marginLeft="10dp"
+			android:background="@color/tab_wtg"
+			android:layout_gravity="center"
+			android:textColor="@color/white"
+			/>
+	</LinearLayout>
+	</RelativeLayout>
 </LinearLayout>

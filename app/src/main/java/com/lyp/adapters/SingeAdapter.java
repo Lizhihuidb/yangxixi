@@ -27,7 +27,8 @@ public class SingeAdapter extends RecyclerView.Adapter<SingeAdapter.MyViewHolder
 
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
-        SingeAdapter.MyViewHolder holder = new SingeAdapter.MyViewHolder(LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.fragment_singe_item, viewGroup,
+        SingeAdapter.MyViewHolder holder = new SingeAdapter.MyViewHolder(
+                LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.fragment_singe_item, viewGroup,
                 false));
         return holder;
     }
@@ -39,6 +40,13 @@ public class SingeAdapter extends RecyclerView.Adapter<SingeAdapter.MyViewHolder
             myViewHolder.mRegion.setText(mList.get(i).getU_addres());//地区
             myViewHolder.mQuote.setText(mList.get(i).getDetection_price());//报价
             myViewHolder.mHome.setVisibility(View.VISIBLE);
+            if (mList.get(i).getDetection_type().equals("复检")){
+                myViewHolder.mBtnjoin.setVisibility(View.VISIBLE);
+            }else if (mList.get(i).getDetection_type().equals("初检")){
+                myViewHolder.mBtnjoin.setVisibility(View.GONE);
+            }else if (mList.get(i).getDetection_type().equals("检测")){
+                myViewHolder.mBtnjoin.setVisibility(View.GONE);
+            }
     }
 
     @Override
@@ -63,6 +71,7 @@ public class SingeAdapter extends RecyclerView.Adapter<SingeAdapter.MyViewHolder
         TextView mHome;//是否居家
         Button mGrab;
         RelativeLayout mSingeAll;
+        Button mBtnjoin,mBtngrab;
 
         public MyViewHolder(View view)
         {
@@ -73,6 +82,8 @@ public class SingeAdapter extends RecyclerView.Adapter<SingeAdapter.MyViewHolder
             mQuote = (TextView) view.findViewById(R.id.tv_quote);
             mGrab = (Button) view.findViewById(R.id.btn_grab_single);
             mHome = (TextView) view.findViewById(R.id.tv_jujia);
+            mBtngrab = (Button) view.findViewById(R.id.btn_grab_single);
+            mBtnjoin = (Button) view.findViewById(R.id.btn_join_single);
             mSingeAll = (RelativeLayout) view.findViewById(R.id.rl_singeAll);
             mSingeAll.setOnClickListener(new View.OnClickListener() {
                 @Override

@@ -11,7 +11,9 @@ import android.widget.TextView;
 import com.lyp.jsonbean.NofenpeiBean;
 import com.tjl.yangxixi.R;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by Administrator on 2017/6/4.
@@ -21,6 +23,8 @@ public class NofenpeiAdapter extends RecyclerView.Adapter<NofenpeiAdapter.MyView
 
     private MyItemClickListener mListener;
     private List<NofenpeiBean.DataBean> mList;
+    // 存储勾选框状态的map集合
+    private Map<Integer, Boolean> map = new HashMap<>();
 
     public NofenpeiAdapter(List<NofenpeiBean.DataBean> list) {
         mList = list;
@@ -38,6 +42,7 @@ public class NofenpeiAdapter extends RecyclerView.Adapter<NofenpeiAdapter.MyView
     public void onBindViewHolder(MyViewHolder myViewHolder, int i) {
         myViewHolder.mName.setText(mList.get(i).getUser_name());
         myViewHolder.mTime.setText(mList.get(i).getPay_time());
+
     }
 
     @Override

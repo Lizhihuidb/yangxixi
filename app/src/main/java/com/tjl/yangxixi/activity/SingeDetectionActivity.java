@@ -66,7 +66,6 @@ public class SingeDetectionActivity extends Activity {
 
         mTitle = (TextView) findViewById(R.id.tv_cardetails_title);
         mOrder = (Button) findViewById(R.id.btn_order_singe);
-        mTitle.setText("治理(居家服务)");
     }
 
     //检测抢单
@@ -85,7 +84,12 @@ public class SingeDetectionActivity extends Activity {
                     SingeDetectionActivity.this.runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
-                            mOrder.setVisibility(View.VISIBLE);
+                            mTitle.setText(detectionBean.getDetection_type());
+                            if (detectionBean.getDetection_type().equals("复检")){
+                                mOrder.setVisibility(View.GONE);
+                            }else {
+                                mOrder.setVisibility(View.VISIBLE);
+                            }
                             mList.addAll(response.body().getData());
                             mAdapter.notifyDataSetChanged();
                         }

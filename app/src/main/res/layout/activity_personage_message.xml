@@ -223,6 +223,26 @@
 	     android:layout_height="0.1sp"
 	     android:background="@color/view_hui"
 	     android:layout_below="@id/rl_message_staffmanagement"
-	     />     
-	</com.lyp.percent.PercentRelativeLayout> 
+	     />
+	   <RelativeLayout
+		   android:layout_width="0dp"
+		   android:layout_height="0dp"
+		   app:layout_heightPercent="15%"
+		   app:layout_widthPercent="100%"
+		   app:layout_marginLeftPercent="5%"
+		   app:layout_marginRightPercent="5%"
+		   app:layout_marginBottomPercent="2%"
+		   android:gravity="bottom"
+		   android:layout_alignParentBottom="true"
+		   >
+		   <Button
+			   android:layout_width="match_parent"
+			   android:layout_height="40dp"
+			   android:text="安全退出"
+			   android:textSize="16sp"
+			   android:background="@drawable/shap_button_radius"
+			   android:textColor="@color/white"
+			   />
+	   </RelativeLayout>
+</com.lyp.percent.PercentRelativeLayout>
 </com.lyp.percent.PercentRelativeLayout>    
